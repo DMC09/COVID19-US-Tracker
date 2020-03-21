@@ -13,9 +13,9 @@ const getData = async () => {
     response.data.countrydata.forEach((item) => {
       // console.log(item);
       container.innerHTML = `
-      <li class="gray-text">${item.total_cases} Total Cases</li>
+      <li class="white-text">${item.total_cases} Total Cases</li>
       <li class="green-text">${item.total_recovered}  Recovered</li>
-      <li class="gray-text">${item.total_unresolved} Unresolved </li>
+      <li class="orange-text">${item.total_unresolved} Unresolved </li>
       <li class="red-text">${item.total_deaths} Deaths </li>
       <li class="yellow-text">${item.total_new_cases_today} New cases today</li>
         `;

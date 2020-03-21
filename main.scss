@@ -1,4 +1,16 @@
 @import './reset.css';
+// vars
+$background:#2D3540;
+$heading:#98B3D9;
+$primary: #707C8C;
+
+// utility classes
+.link-text{
+  color: $primary;
+}
+html{
+   background: $background;
+}
 
 
 .img__container {
@@ -13,6 +25,17 @@
   }
 }
 
+
+header{
+  font-size: 2rem;
+  text-align: center;
+
+  h1{
+    color: $heading;
+  }
+}
+
+
 .data {
   border: 2px solid black;
   list-style: none;
@@ -20,28 +43,37 @@
 
   li {
     list-style: none;
+    border: 1px solid white;
+    padding: 1rem;
+    font-size: 1.25rem;
   }
+}
+
+.do__container,.dont__container,.symptoms__container{
+  text-align: center;
+  color: $primary;
 }
 
 .red-text {
   color: #DC143C;
 }
 
-.gray-text {
-  color: #545454;
+.white-text {
+  color: white;
 }
 
 .green-text {
   color: #006600;
+}
+.orange-text {
+  color: #ff9000;
 }
 
 .yellow-text {
   color: #ffd700;
 }
 
-header {
-  text-align: center;
-}
+
 
 footer {
   text-align: center;
