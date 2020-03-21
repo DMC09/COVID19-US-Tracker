@@ -1,0 +1,48 @@
+@import './reset.css';
+
+
+.img__container {
+  border: 2px solid black;
+  text-align: center;
+  width: auto;
+
+  img {
+    width: auto;
+    max-width: 250px;
+    height: auto;
+  }
+}
+
+.data {
+  border: 2px solid black;
+  list-style: none;
+  text-align: center;
+
+  li {
+    list-style: none;
+  }
+}
+
+.red-text {
+  color: #DC143C;
+}
+
+.gray-text {
+  color: #545454;
+}
+
+.green-text {
+  color: #006600;
+}
+
+.yellow-text {
+  color: #ffd700;
+}
+
+header {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+}

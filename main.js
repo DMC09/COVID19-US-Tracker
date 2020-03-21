@@ -6,17 +6,18 @@ const container = document.querySelector('.data');
 
 const getData = async () => {
   try {
-    const response = await axios.get('https://thevirustracker.com/free-api?global=stats')
+    const response = await axios.get('https://thevirustracker.com/free-api?countryTotal=US')
     console.log(response);
-    // console.log(response.data.results[0].total_cases);
-    response.data.results.forEach((item) => {
-      console.log(item);
+    console.log(response.data.countrydata);
+    console.log(response.data.countrydata[0].total_cases);
+    response.data.countrydata.forEach((item) => {
+      // console.log(item);
       container.innerHTML = `
-      <li>${item.total_cases} Total Cases</li>
-      <li>${item.total_recovered}  Recovered</li>
-      <li>${item.total_unresolved} Unresolved </li>
-      <li>${item.total_deaths} Deaths </li>
-      <li>${item.total_new_cases_today} New cases today</li>
+      <li class="gray-text">${item.total_cases} Total Cases</li>
+      <li class="green-text">${item.total_recovered}  Recovered</li>
+      <li class="gray-text">${item.total_unresolved} Unresolved </li>
+      <li class="red-text">${item.total_deaths} Deaths </li>
+      <li class="yellow-text">${item.total_new_cases_today} New cases today</li>
         `;
     });
 
@@ -25,4 +26,4 @@ const getData = async () => {
   }
 }
 
-btn.addEventListener('click', getData);
+getData();
