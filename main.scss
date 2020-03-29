@@ -115,6 +115,14 @@ html {
     }
   }
 }
+.state__container{
+  background: lighten($background,5%);
+  width: 100%;
+  max-width: 450px;
+  height: 20vh;
+  margin: auto;
+  text-align: center;
+}
 
 .do__container,
 .dont__container,
