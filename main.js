@@ -1,6 +1,6 @@
 "use strict"
 const btn = document.querySelector('.main');
-const container = document.querySelector('.data');
+const container = document.querySelector('.data__container');
 
 
 
@@ -16,9 +16,8 @@ const getData  = (async () => {
       // console.log(item);
       container.innerHTML = `
       <ul>
-      <li class="white-text">${item.total_cases} Total Cases</li>
+      <li class="orange-text">${item.total_cases} Total Cases</li>
       <li class="green-text">${item.total_recovered}  Recovered</li>
-      <li class="orange-text">${item.total_unresolved} Unresolved </li>
       <li class="red-text">${item.total_deaths} Deaths </li>
       <li class="yellow-text">${item.total_new_cases_today} New Cases Today</li>
       </ul>  `;
