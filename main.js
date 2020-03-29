@@ -5,7 +5,7 @@ const container = document.querySelector('.data');
 
 
 
-const getData = async () => {
+const getData  = (async () => {
   try {
     container.innerHTML = '<h2 class="loading-text">Loading Data</h2>'
     const response = await axios.get('https://thevirustracker.com/free-api?countryTotal=US')
@@ -28,6 +28,4 @@ const getData = async () => {
     console.error(error)
     container.innerHTML = `<h3 class="error-text"> API data unable to load please try again later</h3>`
   }
-}
-
-getData();
+})()
