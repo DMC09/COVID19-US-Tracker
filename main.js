@@ -15,12 +15,13 @@ const getData  = (async () => {
     response.data.countrydata.forEach((item) => {
       // console.log(item);
       container.innerHTML = `
-      <ul>
+      <ul class=data__section>
       <li class="orange-text">${item.total_cases} Total Cases</li>
       <li class="green-text">${item.total_recovered}  Recovered</li>
       <li class="red-text">${item.total_deaths} Deaths </li>
       <li class="yellow-text">${item.total_new_cases_today} New Cases Today</li>
-      </ul>  `;
+      </ul>
+        `;
     });
 
   } catch (error) {

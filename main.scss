@@ -5,6 +5,8 @@ $heading: #98B3D9;
 $primary: #707C8C;
 $link: #0000EE; // utility classes
 
+.data__section {}
+
 .loading-text {
   animation: blinkingText 1.2s infinite;
   font-size: 1.5rem;
@@ -86,7 +88,6 @@ html {
   margin: 1rem 0;
   font-size: 2rem;
 
-
   h1 {
     color: $heading;
     text-align: center;
@@ -108,20 +109,30 @@ html {
     justify-content: space-evenly;
     flex-flow: column;
 
-
     li {
       // border:1px solid white;
       font-size: 1.15rem;
     }
   }
 }
-.state__container{
+
+.state__container {
   background: lighten($background,5%);
   width: 100%;
   max-width: 450px;
   height: 20vh;
   margin: auto;
   text-align: center;
+
+  &::before {
+    content: "";
+    background: -webkit-linear-gradient(left, #38414f 0% ,#38414f 10%, $heading 50%,  #38414f 90%, #38414f 100%);
+    display: block;
+    height: 3px;
+    width: 450px;
+    position: absolute;
+    bottom: 1;
+  }
 }
 
 .do__container,
