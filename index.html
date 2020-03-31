@@ -8,7 +8,10 @@
   <meta name="description" content="COVID-19 U.S. Tracker">
   <meta name="keywords" content="HTML,CSS,JavaScript, Coronavirus,">
   <meta name="author" content="Dharmin Chauhan">
-  <link rel="stylesheet" href="main.min.css">
+  <link rel="stylesheet" href="./assets/css/main.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.css">
+  <script src="http://semantic-ui.com/javascript/library/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.js" charset="utf-8"></script>
   <link rel="apple-touch-icon" sizes="57x57" href="./flavicons/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="./flavicons/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="./flavicons/apple-icon-72x72.png">
@@ -42,23 +45,7 @@
 
 </section>
 <section class="state__container">
-  <div class="custom-select" style="width:200px;">
-    <select>
-      <option value="0">Select car:</option>
-      <option value="1">Audi</option>
-      <option value="2">BMW</option>
-      <option value="3">Citroen</option>
-      <option value="4">Ford</option>
-      <option value="5">Honda</option>
-      <option value="6">Jaguar</option>
-      <option value="7">Land Rover</option>
-      <option value="8">Mercedes</option>
-      <option value="9">Mini</option>
-      <option value="10">Nissan</option>
-      <option value="11">Toyota</option>
-      <option value="12">Volvo</option>
-    </select>
-  </div>
+
 </section>
 <section class="do__container">
   <h2>Do</h2>
@@ -95,7 +82,12 @@
 
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" charset="utf-8"></script>
-  <script src="./main.js" charset="utf-8"></script>
+  <script src="./assets/js/main.js" charset="utf-8"></script>
+  <script>
+    $(document).ready(function() {
+      $('.ui.dropdown').dropdown();
+    });
+  </script>
 </body>
 
 </html>
