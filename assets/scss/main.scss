@@ -124,15 +124,7 @@ html {
   margin: auto;
   text-align: center;
 
-  &::before {
-    content: "";
-    background: -webkit-linear-gradient(left, #38414f 0% ,#38414f 10%, $heading 50%,  #38414f 90%, #38414f 100%);
-    display: block;
-    height: 3px;
-    width: 450px;
-    position: absolute;
-    bottom: 1;
-  }
+
 }
 
 .do__container,
