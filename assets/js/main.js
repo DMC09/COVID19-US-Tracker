@@ -17,15 +17,21 @@ const getData = (async () => {
       <li class="yellow-text">${item.total_new_cases_today} New Cases Today</li>
       </ul>
         `
-        console.log('Data loaded');;
+      console.log('Data loaded');;
     });
 
   } catch (error) {
     console.error(error)
     container.innerHTML = `<h3 class="error-text"> API data unable to load please try again later</h3>`
   }
-})()
+})();
 
-// const select = new Dropkick("#state__select", {
-//   // options here
-// });
+$(document).ready(function() {
+  $('.state__select').select2({
+    placeholder: "Select a state",
+    debug: true,
+containerCssClass:'state__box',
+dropdownCssClass:'state__dropdown',
+dropdownCss:{ 'color': 'green' }
+  });
+});

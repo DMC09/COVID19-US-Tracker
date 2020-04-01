@@ -9,9 +9,7 @@
   <meta name="keywords" content="HTML,CSS,JavaScript, Coronavirus,">
   <meta name="author" content="Dharmin Chauhan">
   <link rel="stylesheet" href="./assets/css/main.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.css">
-  <script src="http://semantic-ui.com/javascript/library/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.js" charset="utf-8"></script>
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
   <link rel="apple-touch-icon" sizes="57x57" href="./flavicons/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="./flavicons/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="./flavicons/apple-icon-72x72.png">
@@ -31,63 +29,111 @@
   <meta name="theme-color" content="#ffffff">
   <title>United States Coronavirus Testing</title>
 </head>
-<section class="header__container">
-  <div class="img__container">
-    <img src="./virus.png" alt="">
-  </div>
-  <div class="title__box">
-    <h1 class="">United States COVID-19 Tracker</h1>
-  </div>
-</section>
-
-<section class="data__container">
-  <!-- API data inserted here -->
-
-</section>
-<section class="state__container">
-
-</section>
-<section class="do__container">
-  <h2>Do</h2>
-  <ul class="container__items">
-    <li>Cover coughs and sneezes</li>
-    <li>Stay home if you're sick</li>
-    <li>Wash hands often for at least 20 seconds or use hand sanitizer (60%+ alcohol)</li>
-  </ul>
-
-</section>
-<section class="dont__container ">
-  <h2>Don't</h2>
-  <ul class="container__items">
-    <li>Shake Hands</li>
-    <li>Touch eyes, nose, and mouth</li>
-    <li>Use a facemask if you aren't sick</li>
-  </ul>
-
-</section>
-<section class="symptoms__container ">
-  <h2>Symptoms</h2>
-  <ul class="container__items">
-    <li>Fever</li>
-    <li>Cough</li>
-    <li>Shortness of breath</li>
-  </ul>
-
-</section>
-<footer>
-  <p>API data provided by <a rel="noreferrer" target="_blank" href="https://thevirustracker.com">thevirustracker.com</a></p>
-  <p><a rel="noreferrer" target="_blank" href="https://www.cdc.gov/coronavirus/2019-ncov/prepare/prevention.html">Preventions</a> and <a rel="noreferrer" target="_blank"
-      href="https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html">Symptoms</a> according to CDC</p>
-</footer>
 
 <body>
+  <section class="header__container">
+    <div class="img__container">
+      <img src="./virus.png" alt="">
+    </div>
+    <div class="title__box">
+      <h1 class="">United States COVID-19 Tracker</h1>
+    </div>
+  </section>
+
+  <section class="data__container">
+    <!-- API data inserted here -->
+
+  </section>
+  <section class="state__container">
+    <select class="state__select" name="state">
+      <option></option>
+      <option value="AL">Alabama</option>
+      <option value="AL">Alaska</option>
+      <option value="AL">Arizona</option>
+      <option value="AL">Arkansas</option>
+      <option value="AL">California</option>
+      <option value="AL">Colorado</option>
+      <option value="AL">Connecticut</option>
+      <option value="AL">Delaware</option>
+      <option value="AL">Georgia</option>
+      <option value="AL">Hawaii</option>
+      <option value="AL">Idaho</option>
+      <option value="AL">Illinois</option>
+      <option value="AL">Indiana</option>
+      <option value="AL">Iowa</option>
+      <option value="AL">Kansas</option>
+      <option value="AL">Kentucky</option>
+      <option value="AL">Louisiana</option>
+      <option value="AL">Maine</option>
+      <option value="AL">Maryland</option>
+      <option value="AL">Massachusetts</option>
+      <option value="AL">Michigan</option>
+      <option value="AL">Minnesota</option>
+      <option value="AL">Mississippi</option>
+      <option value="AL">Missouri</option>
+      <option value="AL">Montana</option>
+      <option value="AL">Nebraska</option>
+      <option value="AL">Nevada</option>
+      <option value="AL">New Hampshire</option>
+      <option value="AL">New Jersey</option>
+      <option value="AL">New York</option>
+      <option value="AL">North Carolina</option>
+      <option value="AL">North Dakota</option>
+      <option value="AL">Ohio</option>
+      <option value="AL">Oklahoma</option>
+      <option value="AL">Pennsylvania</option>
+      <option value="AL">Rhode Island</option>
+      <option value="AL">South Carolina</option>
+      <option value="AL">Tennessee</option>
+      <option value="AL">Texas</option>
+      <option value="AL">Utah</option>
+      <option value="AL">Vermont</option>
+      <option value="AL">Virginia</option>
+      <option value="AL">Washington</option>
+      <option value="AL">West Virginia</option>
+      <option value="AL">Wyoming</option>
+    </select>
+  </section>
+  <section class="do__container">
+    <h2>Do</h2>
+    <ul class="container__items">
+      <li>Cover coughs and sneezes</li>
+      <li>Stay home if you're sick</li>
+      <li>Wash hands often for at least 20 seconds or use hand sanitizer (60%+ alcohol)</li>
+    </ul>
+
+  </section>
+  <section class="dont__container ">
+    <h2>Don't</h2>
+    <ul class="container__items">
+      <li>Shake Hands</li>
+      <li>Touch eyes, nose, and mouth</li>
+      <li>Use a facemask if you aren't sick</li>
+    </ul>
+
+  </section>
+  <section class="symptoms__container ">
+    <h2>Symptoms</h2>
+    <ul class="container__items">
+      <li>Fever</li>
+      <li>Cough</li>
+      <li>Shortness of breath</li>
+    </ul>
+
+  </section>
+  <footer>
+    <p>API data provided by <a rel="noreferrer" target="_blank" href="https://thevirustracker.com">thevirustracker.com</a></p>
+    <p><a rel="noreferrer" target="_blank" href="https://www.cdc.gov/coronavirus/2019-ncov/prepare/prevention.html">Preventions</a> and <a rel="noreferrer" target="_blank"
+        href="https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html">Symptoms</a> according to CDC</p>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.full.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" charset="utf-8"></script>
   <script src="./assets/js/main.js" charset="utf-8"></script>
-  <script>
-    $(document).ready(function() {
-      $('.ui.dropdown').dropdown();
-    });
-  </script>
+  <!--
+
+    </script>
 </body>
 
 </html>
