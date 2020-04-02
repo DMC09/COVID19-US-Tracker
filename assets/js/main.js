@@ -27,6 +27,33 @@ const statebox = document.querySelector('.state__select')
 //   }
 // })();
 
+const stateData = (async () => {
+  try {
+    const response = await axios.get('https://covidtracking.com/api/states')
+    // console.log(response.data);
+    const statelist = response.data;
+    console.log(statelist);
+
+    let stateinfo = statelist.filter(function (e) {
+        return e.state === "NC";
+    });
+    console.log(stateinfo[0]);
+
+
+    // statelist.forEach((item) => {
+    //   // console.log(item);
+    //   if (item.state === "NC") {
+    //     return;
+    //   }
+    // });
+
+  } catch (error) {
+    console.error(error)
+  }
+})();
+
+
+
 $(document).ready(function() {
 
   $('#state__select').select2({
@@ -38,7 +65,8 @@ $(document).ready(function() {
     width: '75%'
   });
   $('#state__select').on('select2:select', function(e) {
-    alert('selected');
+    console.log(e.params.data);
+
   })
 
 });
