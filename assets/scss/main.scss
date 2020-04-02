@@ -120,13 +120,18 @@ html {
   background: lighten($background,5%);
   width: 100%;
   max-width: 450px;
-  height: 20vh;
+  height: 25vh;
   margin: auto;
   text-align: center;
   border: 1px solid white;
 .state__select{
   border: 1px solid white;
   height: 100%;
+}
+.state__dropdown{
+  background: darken($heading,50%);
+  color: lighten($heading,50%);
+  border: none;
 }
 
 }
