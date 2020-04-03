@@ -52,9 +52,14 @@ const stateData = async (id) => {
     const response = await axios.get('https://covidtracking.com/api/states')
     const statelist = response.data;
     const stateInfo = statelist.filter(function listGet(e) {
-      return e.state == id; // we can just use "id" because it's already in our scope
+      return e.state === id; // we can just use "id" because it's already in our scope
     });
-    console.log(stateInfo[0]);
+    const state = stateInfo[0]
+console.log(state.death);
+console.log(state.positive);
+console.log(state);
+console.log(state);
+
 
 
 
