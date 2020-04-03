@@ -3,6 +3,7 @@ const btn = document.querySelector('.main');
 const container = document.querySelector('.data__container');
 const statebox = document.querySelector('.state__select')
 
+// Gets United State Data on load
 // const getData = (async () => {
 //   try {
 //     container.innerHTML = '<h2 class="loading-text">Loading Data</h2>'
@@ -30,7 +31,7 @@ const statebox = document.querySelector('.state__select')
 
 
 
-
+// Function to initlize Select dropdown and retreive selection
 $(document).ready(function() {
   $('#state__select').select2({
     placeholder: "Select a state",
@@ -41,21 +42,26 @@ $(document).ready(function() {
     width: '75%'
   });
   $('#state__select').on('select2:select', function getSelect(e) {
-    const id = e.params.data.id.toString();
+    const id = e.params.data.id;
     stateData(id);
   })
 });
-
+// function to retreive ID from dropdown and match with state data
 const stateData = async (id) => {
   try {
     const response = await axios.get('https://covidtracking.com/api/states')
     const statelist = response.data;
-    console.log(statelist);
-    console.log(id);
-    let stateinfo = statelist.filter(function(e, id) {
-      return e.state === "CA";
+    const stateInfo = statelist.filter(function listGet(e) {
+      return e.state == id; // we can just use "id" because it's already in our scope
     });
-    console.log(stateinfo[0]);
+    console.log(stateInfo[0]);
+
+
+
+    // const stateInfo = statelist.filter(function listGet(e, id) {
+    //   return e.state === "TX";
+    // });
+    // console.log(stateInfo[0]);
   } catch (error) {
     console.error(error)
   }
