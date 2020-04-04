@@ -1,6 +1,6 @@
 "use strict"
 const unitedStatesContainer = document.querySelector('.data__container');
-const stateContainer = document.querySelector('.state__container'); //get another container so the select element does not disapear
+const stateContainer = document.querySelector('.state__list'); //get another container so the select element does not disapear
 
 
 // Gets United State Data on load
