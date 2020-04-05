@@ -123,6 +123,21 @@ html {
   margin: auto;
   text-align: center;
 
+  .select2-container--default .select2-selection--single .select2-selection__placeholder,
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: $heading;
+    font-size: 1rem;
+
+  }
+
+  .select2-container--default .select2-search--dropdown .select2-search__field {
+    color: $heading;
+    font-size: 1rem;
+margin:0;
+padding: 0;
+
+  }
+
   span.state__box {
     border: none;
     background: darken($heading,50%);
@@ -141,7 +156,6 @@ html {
 
     .states__api-data {
       height: 100%;
-      border: 1px solid blue;
       display: flex;
       flex-flow: column;
       justify-content: space-evenly;

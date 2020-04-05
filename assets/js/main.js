@@ -59,11 +59,11 @@ const stateData = async (id,name) => {
 
 stateContainer.innerHTML = `
 <ul class = "states__api-data">
-<li>${id} </li>
-<li>${stateStats.death} Deaths </li>
-<li>${stateStats.totalTestResults} Total tested</li>
-<li>${stateStats.positive} positives</li>
-<li>${stateStats.hospitalized || 0} hospitalized</li>
+<li class="yellow-text">${stateStats.totalTestResults} Total tested</li>
+<li class="white-text">${stateStats.positive} positive cases</li>
+<li class="orange-text">${stateStats.hospitalized || 0} hospitalized</li>
+<li class="red-text">${stateStats.death} Deaths </li>
+
 </ul>
 
 `
