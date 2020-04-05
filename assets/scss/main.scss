@@ -5,7 +5,7 @@ $heading: #98B3D9;
 $primary: #707C8C;
 $link: #0000EE; // utility classes
 
-.data__section {}
+.united-data__api {}
 
 .loading-text {
   animation: blinkingText 1.2s infinite;
@@ -94,7 +94,7 @@ html {
   }
 }
 
-.data__container {
+.united__container {
   background: lighten($background,5%);
   width: 100%;
   max-width: 450px;
@@ -120,18 +120,33 @@ html {
   background: lighten($background,5%);
   width: 100%;
   max-width: 450px;
-  height: 25vh;
   margin: auto;
   text-align: center;
-.state__select{
-  height: 100%;
-}
-.state__dropdown{
-  background: darken($heading,50%);
-  color: lighten($heading,50%);
-  border: none;
-}
 
+  span.state__box {
+    border: none;
+    background: darken($heading,50%);
+    color: white;
+    height: 2rem;
+  }
+
+  .state__dropdown {
+    background: darken($heading,50%);
+    color: lighten($heading,50%);
+    border: none;
+  }
+
+  .state__api-list {
+    height: 15rem;
+
+    .states__api-data {
+      height: 100%;
+      border: 1px solid blue;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-evenly;
+    }
+  }
 }
 
 .do__container,

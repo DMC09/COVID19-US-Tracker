@@ -1,16 +1,16 @@
 "use strict"
-const unitedStatesContainer = document.querySelector('.data__container');
-const stateContainer = document.querySelector('.state__list'); //get another container so the select element does not disapear
+const unitedStatesContainer = document.querySelector('.united__container');
+const stateContainer = document.querySelector('.state__api-list'); //get another container so the select element does not disapear
 
 
 // Gets United State Data on load
-const getData = (async () => {
+const getUSData = (async () => {
   try {
     unitedStatesContainer.innerHTML = '<h2 class="loading-text">Loading Data</h2>'
     const response = await axios.get('https://api.thevirustracker.com/free-api?countryTotal=US')
     response.data.countrydata.forEach((item) => {
       unitedStatesContainer.innerHTML = `
-      <ul class=data__section>
+      <ul class=united-data__api>
       <li class="orange-text">${item.total_cases} Total Cases</li>
       <li class="green-text">${item.total_recovered}  Recovered</li>
       <li class="red-text">${item.total_deaths} Deaths </li>
@@ -30,15 +30,15 @@ const getData = (async () => {
 
 // Function to initlize Select dropdown and retreive selection
 $(document).ready(function() {
-  $('#state__select').select2({
+  $('#select').select2({
     placeholder: "Select a state",
     debug: true,
     containerCssClass: 'state__box',
     dropdownCssClass: 'state__dropdown',
-    dropdownParent: $('.state__list'),
+    dropdownParent: $('.state__api-list'),
     width: '75%'
   });
-  $('#state__select').on('select2:select', function getSelect(e) {
+  $('#select').on('select2:select', function getSelect(e) {
     const name = e.params.data.text;
     const id = e.params.data.id;
     stateData(id,name);
@@ -58,9 +58,8 @@ const stateData = async (id,name) => {
     console.log(stateStats.hospitalized || 0); // # of hospitalized
 
 stateContainer.innerHTML = `
-<ul>
-<li>${name} State</li>
-<li>${stateStats.state} State abreviation</li>
+<ul class = "states__api-data">
+<li>${id} </li>
 <li>${stateStats.death} Deaths </li>
 <li>${stateStats.totalTestResults} Total tested</li>
 <li>${stateStats.positive} positives</li>
