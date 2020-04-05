@@ -1,9 +1,11 @@
 // imports
-@import './reset.css'; // vars
+@import 'reset.css'; // vars
 $background: #2D3540;
 $heading: #98B3D9;
 $primary: #707C8C;
 $link: #0000EE; // utility classes
+
+.united-data__api {}
 
 .loading-text {
   animation: blinkingText 1.2s infinite;
@@ -67,7 +69,7 @@ html {
 // main styling
 
 .header__container {
-  height: 50vh;
+  height: 40vh;
 }
 
 .img__container {
@@ -86,32 +88,80 @@ html {
   margin: 1rem 0;
   font-size: 2rem;
 
-
   h1 {
     color: $heading;
     text-align: center;
   }
 }
 
-.data__container {
+.united__container {
   background: lighten($background,5%);
   width: 100%;
   max-width: 450px;
-  height: 50vh;
+  height: 60vh;
   margin: auto;
   list-style: none;
   text-align: center;
 
   ul {
     height: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4,1fr);
-    place-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: column;
 
     li {
       // border:1px solid white;
       font-size: 1.15rem;
+    }
+  }
+}
+
+.state__container {
+  background: lighten($background,5%);
+  width: 100%;
+  max-width: 450px;
+  margin: auto;
+  text-align: center;
+
+  .select2-container--default .select2-selection--single .select2-selection__placeholder,
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: $heading;
+    font-size: 1rem;
+  }
+
+  .select2-container--default .select2-search--dropdown .select2-search__field {
+    color: $heading;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  span.state__box {
+    border: none;
+    background: darken($heading,50%);
+    color: white;
+    height: 2rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .state__dropdown {
+    background: darken($heading,50%);
+    color: lighten($heading,50%);
+    border: none;
+  }
+
+  .state__api-list {
+    height: 15rem;
+
+    .states__api-data {
+      height: 100%;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-evenly;
     }
   }
 }
