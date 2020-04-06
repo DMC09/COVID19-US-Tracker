@@ -21,7 +21,7 @@ const getUSData = (async () => {
 
   } catch (error) {
     console.error(error)
-    container.innerHTML = `<h3 class="error-text"> API data unable to load please try again later</h3>`
+    unitedStatesContainer.innerHTML = `<h3 class="error-text"> API data unable to load please try again later</h3>`
   }
 })();
 

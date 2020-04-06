@@ -1,11 +1,12 @@
 // imports
-@import 'reset.css'; // vars
+@import 'reset.css';
+// vars
 $background: #2D3540;
 $heading: #98B3D9;
 $primary: #707C8C;
-$link: #0000EE; // utility classes
+$link: #0000EE;
 
-.united-data__api {}
+// utility classes
 
 .loading-text {
   animation: blinkingText 1.2s infinite;
@@ -111,7 +112,7 @@ html {
 
     li {
       // border:1px solid white;
-      font-size: 1.15rem;
+      font-size: 1.65rem;
     }
   }
 }
@@ -126,12 +127,12 @@ html {
   .select2-container--default .select2-selection--single .select2-selection__placeholder,
   .select2-container--default .select2-selection--single .select2-selection__rendered {
     color: $heading;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .select2-container--default .select2-search--dropdown .select2-search__field {
-    color: $heading;
-    font-size: 1rem;
+    color: black;
+    font-size: 1.5rem;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -183,29 +184,19 @@ html {
   h2 {
     padding: 1.5rem 0.5rem 0;
     color: white;
-    // font-size: 1.75rem;
+    font-size: 1.5rem;
     text-decoration: underline;
   }
 
   .container__items {
-    color: black;
+    color: lighten(black,10%);
     padding: 1.5rem 0.5rem;
-    // font-size: 1rem;
+    font-size: 1rem;
     li {
       padding: 0.25rem;
     }
   }
 
-  p {
-    padding: 0.5rem 0;
-    // font-size: 0.75rem;
-    color: black;
-
-    a {
-      text-decoration: none;
-      color: $link;
-    }
-  }
 }
 
 .do__container {
@@ -227,8 +218,7 @@ html {
 
 footer {
   text-align: center;
-  background: rgba(46,46,46, 1);
-  background: rgba(46,46,46, 1);
+  background: black;
   width: 100%;
   max-width: 450px;
   margin: auto;
@@ -239,8 +229,69 @@ footer {
 
     a {
       text-decoration: none;
-      // color: $link;
-      color: lighten(rgba(50, 2, 2, 1),25%);
+      color: lighten(navy,50%);
     }
   }
 }
+
+// Media queries
+
+@media (orientation: landscape) {
+
+  .header__container{
+    height: auto;
+  }
+  .title__box h1 {
+    text-align: center;
+  }
+}
+
+// Small devices
+
+   @media (max-width: 576px ) {
+     .title__box h1 {
+       text-align: center;
+     }
+     .header__container{
+       height: auto;
+     }
+     .united__container{
+
+     }
+   }
+
+   @media (min-width: 576px ) {
+     .title__box h1 {
+       text-align: center;
+     }
+     .header__container{
+       height: auto;
+     }
+   }
+
+
+// Medium devices
+
+   @media (min-width: 768px) {
+     .title__box h1 {
+       text-align: center;
+     }
+   }
+
+
+// Large devices
+
+   @media (min-width: 992px) {
+     .title__box h1 {
+       text-align: center;
+     }
+   }
+
+
+// Extra large devices
+
+   @media (min-width: 1200px) {
+     .title__box h1 {
+       text-align: center;
+     }
+   }
