@@ -8,7 +8,7 @@ const getUSData = (async () => {
   try {
     unitedStatesContainer.innerHTML = '<h2 class="loading-text">Loading Data</h2>'
     const response = await axios.get('https://api.thevirustracker.com/free-api?countryTotal=US')
-    response.data.countrydata.forEach((item) => {
+    response.data.countrydata.forEach(item => {
       unitedStatesContainer.innerHTML = `
       <ul class=united-data__api>
       <li class="orange-text">${item.total_cases} Total Cases</li>
