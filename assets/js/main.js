@@ -9,12 +9,14 @@ const getUSData = (async () => {
     unitedStatesContainer.innerHTML = '<h2 class="loading-text">Loading Data</h2>'
     const response = await axios.get('https://api.thevirustracker.com/free-api?countryTotal=US')
     response.data.countrydata.forEach(item => {
+      console.log(item);
+      const {total_cases,total_recovered,total_deaths,total_new_cases_today} = item;
       unitedStatesContainer.innerHTML = `
       <ul class=united-data__api>
-      <li class="orange-text">${item.total_cases} Total Cases</li>
-      <li class="green-text">${item.total_recovered}  Recovered</li>
-      <li class="red-text">${item.total_deaths} Deaths </li>
-      <li class="yellow-text">${item.total_new_cases_today} New Cases Today</li>
+      <li class="orange-text">${total_cases.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} Total Cases</li>
+      <li class="green-text">${total_recovered.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}  Recovered</li>
+      <li class="red-text">${total_deaths.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} Deaths </li>
+      <li class="yellow-text">${total_new_cases_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} New Cases Today</li>
       </ul>
         `
     });
@@ -59,10 +61,10 @@ const stateData = async (id,name) => {
 
 stateContainer.innerHTML = `
 <ul class = "states__api-data">
-<li class="yellow-text">${stateStats.totalTestResults} Total tested</li>
-<li class="white-text">${stateStats.positive} positive cases</li>
-<li class="orange-text">${stateStats.hospitalized || 0} hospitalized</li>
-<li class="red-text">${stateStats.death} Deaths </li>
+<li class="yellow-text">${stateStats.totalTestResults.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} Total tested</li>
+<li class="white-text">${stateStats.positive.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} positive cases</li>
+<li class="orange-text">${stateStats.hospitalized.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') || 0} hospitalized</li>
+<li class="red-text">${stateStats.death.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} Deaths </li>
 
 </ul>
 
