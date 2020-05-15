@@ -1,36 +1,41 @@
 "use strict"
 const unitedStatesContainer = document.querySelector('.united__container');
 const stateContainer = document.querySelector('.state__api-list'); //get another container so the select element does not disapear
-
+const toFormat = number => number == null ? 0 : number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 
 // Gets United State Data on load
 const getUSData = (async () => {
+const loadingText = '<h2 class="loading-text">Loading Data</h2>'
+const errorText = `<h3 class="error-text"> API data unable to load please try again later</h3>`
+const api= 'https://api.thevirustracker.com/free-api?countryTotal=US'
   try {
-    unitedStatesContainer.innerHTML = '<h2 class="loading-text">Loading Data</h2>'
-    const response = await axios.get('https://api.thevirustracker.com/free-api?countryTotal=US')
+    unitedStatesContainer.innerHTML = loadingText
+    const response = await axios.get(api)
     response.data.countrydata.forEach(item => {
-      console.log(item);
-      const {total_cases,total_recovered,total_deaths,total_new_cases_today} = item;
+      const
+       {total_cases,
+        total_recovered,
+        total_deaths,total_new_cases_today} = item;
       unitedStatesContainer.innerHTML = `
       <ul class=united-data__api>
-      <li class="orange-text">${total_cases.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} Total Cases</li>
-      <li class="green-text">${total_recovered.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}  Recovered</li>
-      <li class="red-text">${total_deaths.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} Deaths </li>
-      <li class="yellow-text">${total_new_cases_today.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} New Cases Today</li>
+      <li class="orange-text">${toFormat(total_cases)} Total Cases</li>
+      <li class="green-text">${toFormat(total_recovered)}  Recovered</li>
+      <li class="red-text">${toFormat(total_deaths)} Deaths </li>
+      <li class="yellow-text">${toFormat(total_new_cases_today)} New Cases Today</li>
       </ul>
         `
     });
 
   } catch (error) {
     console.error(error)
-    unitedStatesContainer.innerHTML = `<h3 class="error-text"> API data unable to load please try again later</h3>`
+    unitedStatesContainer.innerHTML = errorText
   }
 })();
 
 
 
 
-// Function to initlize Select dropdown and retreive selection
+// Function to in Select dropdown and retreive selection
 $(document).ready(function() {
   $('#select').select2({
     placeholder: "Select a state",
@@ -51,20 +56,14 @@ const stateData = async (id,name) => {
   try {
     const response = await axios.get(`https://covidtracking.com/api/states?state=${id}`)
     const {...stateStats} = response.data;
-    console.log(stateStats.state); // abbreviation of state
-    console.log(name); // name of state
-    console.log(stateStats); //  state obj
-    console.log(stateStats.death); //  deaths in state
-    console.log(stateStats.totalTestResults); // Total tested in state
-    console.log(stateStats.positive); // Positive cases
-    console.log(stateStats.hospitalized || 0); // # of hospitalized
+    const {death,totalTestResults,positive,hospitalized} = stateStats
 
 stateContainer.innerHTML = `
 <ul class = "states__api-data">
-<li class="yellow-text">${stateStats.totalTestResults.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} Total tested</li>
-<li class="white-text">${stateStats.positive.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} positive cases</li>
-<li class="orange-text">${stateStats.hospitalized.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') || 0} hospitalized</li>
-<li class="red-text">${stateStats.death.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} Deaths </li>
+<li class="yellow-text">${toFormat(totalTestResults)} Total tested</li>
+<li class="white-text">${toFormat(positive)} positive cases</li>
+<li class="orange-text">${ toFormat(hospitalized)} hospitalized</li>
+<li class="red-text">${toFormat(death)} Deaths </li>
 
 </ul>
 
