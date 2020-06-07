@@ -54,7 +54,8 @@ $(document).ready(function() {
 // function to retreive ID from dropdown and match with state data
 const stateData = async (id,name) => {
   try {
-    const response = await axios.get(`https://covidtracking.com/api/states?state=${id}`)
+    console.log(id)
+    const response = await axios.get(`https://covidtracking.com/api/states?state=${id.toLowerCase()}`)
     const {...stateStats} = response.data;
     const {death,totalTestResults,positive,hospitalized} = stateStats
 
