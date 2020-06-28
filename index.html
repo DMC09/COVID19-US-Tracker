@@ -23,6 +23,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./flavicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="./flavicons/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./flavicons/favicon-16x16.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;1,600&display=swap" rel="stylesheet">
   <link rel="manifest" href="/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
@@ -31,17 +32,15 @@
 </head>
 
 <body>
+<div class="main__container">
   <section class="header__container">
-    <div class="img__container">
-      <img src="./virus.png" alt="">
-    </div>
-    <div class="title__box">
-      <h1 class="">United States COVID-19 Tracker</h1>
-    </div>
+    <img src="./virus.png" alt="">
+    <h1 class="">United States COVID-19 Tracker</h1>
   </section>
   <section class="united__container">
     <!-- API data inserted here -->
   </section>
+
   <section class="state__container">
     <select id="select" name="state">
       <option></option>
@@ -126,6 +125,12 @@
     <p><a rel="noreferrer" target="_blank" href="https://www.cdc.gov/coronavirus/2019-ncov/prepare/prevention.html">Preventions</a> and <a rel="noreferrer" target="_blank"
         href="https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html">Symptoms</a> according to CDC</p>
   </footer>
+</div>
+  </footer>
+</div>
+
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.full.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" charset="utf-8"></script>

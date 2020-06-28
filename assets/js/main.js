@@ -8,13 +8,17 @@ const toFormat = (number) =>
 
 // Gets United State Data on load
 const getUSData = (async () => {
-  const loadingText = '<h2 class="loading-text">Loading Data</h2>';
+  const loadingText = '<div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
   const errorText = `<h3 class="error-text"> API data unable to load please try again later</h3>`;
   const api = "https://api.thevirustracker.com/free-api?countryTotal=US";
   try {
     unitedStatesContainer.innerHTML = loadingText;
     const response = await axios.get(api);
-    const {countrydata } = response.data;
+    // console.log(response)
+    console.log(response.data)
+    const {countrydata}  = response.data;
+    // console.log(countrydata)
+
     countrydata.forEach((item) => {
       const {
         total_cases,
