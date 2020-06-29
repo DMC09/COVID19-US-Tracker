@@ -1,6 +1,7 @@
 "use strict";
 const unitedStatesContainer = document.querySelector(".united__container");
 const stateContainer = document.querySelector(".state__api-list"); //get another container so the select element does not disapear
+
 const toFormat = (number) =>
   number == null
     ? 0
@@ -55,16 +56,26 @@ $(document).ready(function () {
     width: "75%",
   });
 
+  const clickHandler = (e) => {
+    // console.log(e);
+    dontContainer.scrollIntoView(true,{behavior:'smooth',block:"center"});
+
+  };
+
   const stateBox = document.querySelector(".state__box");
+  const dontContainer = document.querySelector(".dont__container");
+  console.log(stateBox);
+  stateBox.addEventListener("mousedown", clickHandler, { once: true });
 
-  $(".state__box").mousedown(function (e) {
-    console.log(e);
-    window.scrollBy({
-    "behavior": "smooth",
-    "top": 500
-});
-
-  });
+  //   $(".state__box").mousedown(function (e) {
+  //     console.log(e);
+  //     dontContainer.scrollIntoView();
+  //     window.scrollBy({
+  //     "behavior": "smooth",
+  //     "top": 500
+  // });
+  //
+  //   });
 
   $("#select").on("select2:select", function getSelect(e) {
     const name = e.params.data.text;
@@ -92,8 +103,4 @@ const stateData = async (id, name) => {
   } catch (error) {
     console.error(error);
   }
-};
-
-const callView = (e) => {
-  console.log(e);
 };
