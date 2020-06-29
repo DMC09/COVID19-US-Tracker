@@ -8,15 +8,16 @@ const toFormat = (number) =>
 
 // Gets United State Data on load
 const getUSData = (async () => {
-  const loadingText = '<div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
+  const loadingText =
+    '<div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
   const errorText = `<h3 class="error-text"> API data unable to load please try again later</h3>`;
   const api = "https://api.thevirustracker.com/free-api?countryTotal=US";
   try {
     unitedStatesContainer.innerHTML = loadingText;
     const response = await axios.get(api);
     // console.log(response)
-    console.log(response.data)
-    const {countrydata}  = response.data;
+    // console.log(response.data)
+    const { countrydata } = response.data;
     // console.log(countrydata)
 
     countrydata.forEach((item) => {
@@ -53,22 +54,34 @@ $(document).ready(function () {
     dropdownParent: $(".state__api-list"),
     width: "75%",
   });
+
+  const stateBox = document.querySelector(".state__box");
+
+  $(".state__box").mousedown(function (e) {
+    console.log(e);
+    window.scrollBy({
+    "behavior": "smooth",
+    "top": 500
+});
+
+  });
+
   $("#select").on("select2:select", function getSelect(e) {
     const name = e.params.data.text;
     const id = e.params.data.id;
     stateData(id, name);
   });
 });
+
 // function to retreive ID from dropdown and match with state data
 const stateData = async (id, name) => {
-const api = `https://covidtracking.com/api/states?state=${id.toLowerCase()}`
+  const api = `https://covidtracking.com/api/states?state=${id.toLowerCase()}`;
   try {
     console.log(id);
     const response = await axios.get(api);
     const { ...stateStats } = response.data;
     const { death, totalTestResults, positive, hospitalized } = stateStats;
-    stateContainer.innerHTML =
-`
+    stateContainer.innerHTML = `
 <ul class = "states__api-data">
 <li class="yellow-text">${toFormat(totalTestResults)} Total tested</li>
 <li class="white-text">${toFormat(positive)} positive cases</li>
@@ -79,4 +92,8 @@ const api = `https://covidtracking.com/api/states?state=${id.toLowerCase()}`
   } catch (error) {
     console.error(error);
   }
+};
+
+const callView = (e) => {
+  console.log(e);
 };

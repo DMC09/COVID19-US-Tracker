@@ -5,7 +5,28 @@ $background: #2d3540;
 $heading: #98b3d9;
 $primary: #707c8c;
 $link: #0000ee;
+@mixin horizontal-list {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#2d3540+0,707c8c+50,2d3540+100 */
+  background: #2d3540; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #2d3540 0%, #707c8c 50%, #2d3540 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  #2d3540 0%,#707c8c 50%,#2d3540 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  #2d3540 0%,#707c8c 50%,#2d3540 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d3540', endColorstr='#2d3540',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
+
+}
+.title{
+  font-size: 2rem;
+  color: $primary
+}
+
+
+hr{
+@include horizontal-list
+  border: none;
+  height: .1rem;
+  // background: green;
+}
 // utility classes
 .red-text {
   color: #dc143c;
@@ -90,8 +111,8 @@ body {
 .main__container {
   margin-top: 1rem;
   margin: auto;
-  width: auto;
-  max-width: 600px;
+width: 500px;
+  max-width: 90%;
   text-align: center;
   border-radius: 10px;
   padding: 1rem 0;
@@ -151,9 +172,6 @@ body {
 
   span.state__box {
     border: none;
-    background: #2d3540;
-    border-radius: 10px;
-    background: #2d3540;
     border-radius: 10px;
     background: #2d3540;
     box-shadow: 4px -4px 7px #262d36, -4px 4px 7px #343d4a;

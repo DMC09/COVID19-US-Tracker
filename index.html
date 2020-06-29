@@ -35,14 +35,15 @@
 <div class="main__container">
   <section class="header__container">
     <img src="./virus.png" alt="">
-    <h1 class="">United States COVID-19 Tracker</h1>
+    <h1 class="title">United States COVID-19 Tracker</h1>
   </section>
+  <hr>
   <section class="united__container">
     <!-- API data inserted here -->
   </section>
 
   <section class="state__container">
-    <select id="select" name="state">
+    <select onmousedown="callView()" id="select" name="state">
       <option></option>
       <option value="AL">Alabama</option>
       <option value="AK">Alaska</option>
@@ -135,6 +136,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.full.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" charset="utf-8"></script>
   <script src="./assets/js/main.js" charset="utf-8"></script>
+  <script>
+
+  </script>
 </body>
 
 </html>
