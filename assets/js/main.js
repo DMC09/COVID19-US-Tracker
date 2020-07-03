@@ -30,10 +30,10 @@ const getUSData = (async () => {
       } = item;
       unitedStatesContainer.innerHTML = `
       <ul class=united-data__api>
-      <li class="orange-text">${toFormat(total_cases)} Total Cases</li>
-      <li class="green-text">${toFormat(total_recovered)}  Recovered</li>
-      <li class="red-text">${toFormat(total_deaths)} Deaths </li>
-      <li class="yellow-text">${toFormat(
+      <li >${toFormat(total_cases)} Total Cases</li>
+      <li >${toFormat(total_recovered)}  Recovered</li>
+      <li >${toFormat(total_deaths)} Deaths </li>
+      <li >${toFormat(
         total_new_cases_today
       )} New Cases Today</li>
       </ul>
@@ -41,7 +41,7 @@ const getUSData = (async () => {
     });
   } catch (error) {
     console.error(error);
-    unitedStatesContainer.innerHTML = errorText;
+    // unitedStatesContainer.innerHTML = errorText;
   }
 })();
 
@@ -93,10 +93,10 @@ const stateData = async (id, name) => {
     const { death, totalTestResults, positive, hospitalized } = stateStats;
     stateContainer.innerHTML = `
 <ul class = "states__api-data">
-<li class="yellow-text">${toFormat(totalTestResults)} Total tested</li>
-<li class="white-text">${toFormat(positive)} positive cases</li>
-<li class="orange-text">${toFormat(hospitalized)} hospitalized</li>
-<li class="red-text">${toFormat(death)} Deaths </li>
+<li >${toFormat(totalTestResults)} Total tested</li>
+<li >${toFormat(positive)} positive cases</li>
+<li >${toFormat(hospitalized)} hospitalized</li>
+<li >${toFormat(death)} Deaths </li>
 </ul>
 `;
   } catch (error) {
