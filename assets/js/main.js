@@ -64,8 +64,7 @@ $(document).ready(function () {
 
   const stateBox = document.querySelector(".state__box");
   const dontContainer = document.querySelector(".dont__container");
-  console.log(stateBox);
-  stateBox.addEventListener("mousedown", clickHandler, { once: true });
+
 
   //   $(".state__box").mousedown(function (e) {
   //     console.log(e);

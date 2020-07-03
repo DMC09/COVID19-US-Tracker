@@ -1,0 +1,33 @@
+@mixin horizontal-list {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#2d3540+0,707c8c+50,2d3540+100 */
+  background: #2d3540; /* Old browsers */
+  background: -moz-linear-gradient(
+    -45deg,
+    #2d3540 0%,
+    #707c8c 50%,
+    #2d3540 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    -45deg,
+    #2d3540 0%,
+    #707c8c 50%,
+    #2d3540 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    135deg,
+    #2d3540 0%,
+    #707c8c 50%,
+    #2d3540 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d3540', endColorstr='#2d3540',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+@mixin neumorph {
+  // border-radius: 10px;
+  background: #2d3540;
+  box-shadow: 5px 5px 10px #262d36, -5px -5px 10px #343d4a;
+}
+@mixin neumorph_alt {
+  // border-radius: 10px;
+  background: #2d3540;
+  box-shadow: -5px -5px 10px #262d36 inset, 5px 5px 10px #343d4a inset;
+}

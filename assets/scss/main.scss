@@ -1,136 +1,91 @@
 // imports
 @import "reset.css";
+@import "./mixins.scss";
 // vars
 $background: #2d3540;
 $heading: #98b3d9;
-$primary: #707c8c;
-$link: #0000ee;
+$primary: #243a59;
+$text: 1rem;
 @mixin horizontal-list {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#2d3540+0,707c8c+50,2d3540+100 */
   background: #2d3540; /* Old browsers */
-  background: -moz-linear-gradient(-45deg,  #2d3540 0%, #707c8c 50%, #2d3540 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg,  #2d3540 0%,#707c8c 50%,#2d3540 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg,  #2d3540 0%,#707c8c 50%,#2d3540 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(
+    -45deg,
+    #2d3540 0%,
+    #707c8c 50%,
+    #2d3540 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    -45deg,
+    #2d3540 0%,
+    #707c8c 50%,
+    #2d3540 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    135deg,
+    #2d3540 0%,
+    #707c8c 50%,
+    #2d3540 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d3540', endColorstr='#2d3540',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-
 }
-.title{
-  font-size: 2rem;
-  color: $primary
+@mixin neumorph {
+  border-radius: 10px;
+  background: #2d3540;
+  box-shadow: 5px 5px 10px #262d36, -5px -5px 10px #343d4a;
 }
-
-
-hr{
-@include horizontal-list
-  border: none;
-  height: .1rem;
-  // background: green;
+@mixin neumorph_alt {
+  border-radius: 10px;
+  background: #2d3540;
+  box-shadow: -5px -5px 10px #262d36 inset, 5px 5px 10px #343d4a inset;
 }
-// utility classes
-.red-text {
-  color: #dc143c;
-}
-
-.white-text {
-  color: white;
-}
-
-.green-text {
-  color: lighten(#006600, 15%);
-}
-
-.orange-text {
-  color: #ff9000;
-}
-
-.yellow-text {
-  color: #ffd700;
-}
-
-.error-text {
-  font-size: 1.5rem;
-  color: red;
-  padding-top: 40%;
-}
-
-.loading-text {
-  animation: blinkingText 1.2s infinite;
-  font-size: 1.5rem;
-  color: #dc143c;
-  padding-top: 40%;
-}
-@keyframes blinkingText {
-  0% {
-    opacity: 0;
-  }
-
-  25% {
-    opacity: 0.25;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  75% {
-    opacity: 0.75;
-  }
-
-  100% {
-    opacity: 1;
-  }
+@mixin neumorph_caution {
+  border-radius: 10px;
+  background: #ba6d01;
+  box-shadow: 5px -5px 0px #9e5d01, -5px 5px 0px #d67d01;
 }
 
 // overall
 
 html {
   background: $background;
-font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 body {
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
 // main styling
+main.main__container {
+  margin: auto;
+  max-width: 500px;
+  width: 95%;
+  text-align: center;
+
+  @include neumorph;
+}
 
 .header__container {
   text-align: center;
+
+  width: 100%;
+
   img {
     width: auto;
     max-width: 200px;
     height: auto;
   }
-}
-
-.title__box {
   h1 {
-    color: $heading;
+    color: green;
   }
-}
-.main__container {
-  margin-top: 1rem;
-  margin: auto;
-width: 500px;
-  max-width: 90%;
-  text-align: center;
-  border-radius: 10px;
-  padding: 1rem 0;
-  background: #2d3540;
-  border-radius: 10px;
-  background: #2d3540;
-  box-shadow: 4px -4px 7px #262d36, -4px 4px 7px #343d4a;
 }
 
 .united__container {
-  background: $background;
   width: 100%;
-  max-width: 450px;
-  height: 60vh;
+  height: 40vh;
   margin: auto;
   list-style: none;
   text-align: center;
-  border-radius: 10px;
 
   ul {
     height: 100%;
@@ -140,17 +95,15 @@ width: 500px;
 
     li {
       // border:1px solid white;
-      font-size: 1.65rem;
     }
   }
 }
 
 .state__container {
   width: 100%;
-  max-width: 450px;
+
   margin: auto;
   text-align: center;
-  border-radius: 10px;
 
   .select2-container--default
     .select2-selection--single
@@ -159,12 +112,13 @@ width: 500px;
     .select2-selection--single
     .select2-selection__rendered {
     color: white;
-    font-size: 1.5rem;
+    margin-top: 2rem;
+
   }
 
   .select2-container--default .select2-search--dropdown .select2-search__field {
     color: black;
-    font-size: 1.5rem;
+
     text-align: center;
     margin: 0;
     padding: 0;
@@ -172,9 +126,7 @@ width: 500px;
 
   span.state__box {
     border: none;
-    border-radius: 10px;
-    background: #2d3540;
-    box-shadow: 4px -4px 7px #262d36, -4px 4px 7px #343d4a;
+    @include neumorph_alt;
     color: white;
     height: 2rem;
 
@@ -184,9 +136,8 @@ width: 500px;
   }
 
   .state__dropdown {
-    background: #2d3540;
     border-radius: 10px;
-    background: #2d3540;
+    background: lighten(#2d3540, 10);
     box-shadow: 26px -26px 52px #262d36, -26px 26px 52px #343d4a;
     color: lighten($heading, 50%);
     border: none;
@@ -204,8 +155,50 @@ width: 500px;
   }
 }
 
-.do__container,
-.dont__container,
+.caution__container {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  text-align: center;
+  color: $primary;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  max-height: 350px;
+  h2 {
+    padding: 3rem 0.5rem;
+    text-decoration: none;
+    color: orange;
+  }
+  .attBtn {
+    // border: 1px solid white;
+
+    margin-left: 100px;
+    width: 75px;
+    height: 75px;
+    /* Rotate div */
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+
+    @include neumorph_caution;
+
+    .attImg {
+      -ms-transform: rotate(-45deg); /* IE 9 */
+      -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+      transform: rotate(-45deg);
+      // border: 1px solid green;
+    }
+  }
+
+  .container__items {
+    color: #f8db95;
+    padding: 2.5rem 0.5rem;
+    li {
+      padding: 0.25rem;
+    }
+  }
+}
 .symptoms__container {
   display: flex;
   flex-flow: column;
@@ -214,60 +207,53 @@ width: 500px;
   color: $primary;
   margin: auto;
   width: 100%;
-  max-width: 450px;
   height: 100%;
   max-height: 350px;
 
   h2 {
     padding: 1.5rem 0.5rem 0;
-    color: white;
-    font-size: 1.5rem;
-    text-decoration: underline;
+    text-decoration: none;
+    color: orange;
   }
 
   .container__items {
     color: lighten(black, 10%);
-    padding: 1.5rem 0.5rem;
-    font-size: 1rem;
+    border: 1px solid white;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+
     li {
-      padding: 0.25rem;
+      padding: 1.5rem 0.5rem 0;
+      flex-basis: 33%;
+      height: 6rem;
+      border: 1px solid white;
+      // color: #F8DB95;
     }
   }
-}
-
-.do__container {
-  // background: rgba(34, 139, 34, 0.4);
-  z-index: 3;
-  position: relative;
-}
-
-.dont__container {
-  // background: rgba(255, 0, 0, 0.4);
-  z-index: 2;
-  position: relative;
-}
-
-.symptoms__container {
-  // background: rgba(255, 230, 0, 0.4);
-  z-index: 0;
 }
 
 footer {
   text-align: center;
-  // background: black;
   width: 100%;
-  max-width: 450px;
   margin: auto;
-  padding: 1rem 0;
+  padding: 2rem 0;
 
   p {
-    color: rgba(203, 203, 203, 1);
-
+    font-size: $text;
     a {
       text-decoration: none;
-      color: lighten(navy, 50%);
+      color: orange;
     }
   }
+}
+
+// specific
+
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__arrow {
+  margin-top: 2rem;
 }
 
 // Media queries
@@ -276,7 +262,7 @@ footer {
   .header__container {
     height: auto;
   }
-  .title__box h1 {
+  .header__container h1 {
     text-align: center;
   }
 }
@@ -284,20 +270,12 @@ footer {
 // Small devices
 
 @media (max-width: 576px) {
-  .title__box h1 {
-    text-align: center;
-  }
   .header__container {
     height: auto;
-  }
-  .united__container {
   }
 }
 
 @media (min-width: 576px) {
-  .title__box h1 {
-    text-align: center;
-  }
   .header__container {
     height: auto;
   }
@@ -306,25 +284,16 @@ footer {
 // Medium devices
 
 @media (min-width: 768px) {
-  .title__box h1 {
-    text-align: center;
-  }
 }
 
 // Large devices
 
 @media (min-width: 992px) {
-  .title__box h1 {
-    text-align: center;
-  }
 }
 
 // Extra large devices
 
 @media (min-width: 1200px) {
-  .title__box h1 {
-    text-align: center;
-  }
 }
 
 .lds-grid {
@@ -340,7 +309,7 @@ footer {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: lighten($background,10%);
+  background: lighten($background, 10%);
   animation: lds-grid 1.2s linear infinite;
 }
 .lds-grid div:nth-child(1) {
@@ -389,7 +358,8 @@ footer {
   animation-delay: -1.6s;
 }
 @keyframes lds-grid {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {

@@ -32,18 +32,16 @@
 </head>
 
 <body>
-<div class="main__container">
+<main class="main__container">
   <section class="header__container">
     <img src="./virus.png" alt="">
     <h1 class="title">United States COVID-19 Tracker</h1>
   </section>
-  <hr>
   <section class="united__container">
     <!-- API data inserted here -->
   </section>
-
   <section class="state__container">
-    <select onmousedown="callView()" id="select" name="state">
+    <select id="select" name="state">
       <option></option>
       <option value="AL">Alabama</option>
       <option value="AK">Alaska</option>
@@ -96,22 +94,21 @@
 
     </div>
   </section>
-  <section class="do__container">
-    <h2>Do</h2>
+  <section class="caution__container">
+    <h2>Remember</h2>
+    <div class="attBtn">
+      <img  class="attImg" src="assets/img/attention.svg" alt="yellow caution symbol">
+    </div>
     <ul class="container__items">
       <li>Cover coughs and sneezes</li>
       <li>Avoid Close Contact</li>
       <li>Wash hands often for at least 20 seconds or use hand sanitizer</li>
-    </ul>
-  </section>
-  <section class="dont__container ">
-    <h2>Don't</h2>
-    <ul class="container__items">
       <li>Shake Hands</li>
       <li>Touch eyes, nose, and mouth</li>
       <li>Go out in public if you feel sick</li>
     </ul>
   </section>
+
   <section class="symptoms__container ">
     <h2>Symptoms</h2>
     <ul class="container__items">
@@ -126,7 +123,7 @@
     <p><a rel="noreferrer" target="_blank" href="https://www.cdc.gov/coronavirus/2019-ncov/prepare/prevention.html">Preventions</a> and <a rel="noreferrer" target="_blank"
         href="https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html">Symptoms</a> according to CDC</p>
   </footer>
-</div>
+</main>
   </footer>
 </div>
 
