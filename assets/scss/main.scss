@@ -2,15 +2,16 @@
 @import "reset.css";
 // vars
 $background: #2d3540;
-$caution: #BA6D01;
+$caution: #ba6d01;
 $caution_alt: #f8db95;
-$heading: #98B3D9;
-$numbers: #141414;
+// $heading: #98B3D9;
+$heading: #e5e5e5;
+$numbers: #98b3d9;
 $title: 2.5rem;
 $data: 1.75rem;
 $info: 1.5rem;
 $text: 1rem;
-@mixin horizontal-list {
+@mixin horizntal-list {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#2d3540+0,707c8c+50,2d3540+100 */
   background: #2d3540; /* Old browsers */
   background: -moz-linear-gradient(
@@ -99,7 +100,6 @@ main.main__container {
     flex-flow: column;
 
     li {
-      // border:1px solid white;
       font-size: $data;
       color: $numbers;
     }
@@ -116,13 +116,14 @@ main.main__container {
   .select2-container--default
     .select2-selection--single
     .select2-selection__rendered {
-    color: white;
+    color: $heading;
     margin-top: 2rem;
     font-size: $data;
   }
 
   .select2-container--default .select2-search--dropdown .select2-search__field {
-    color: black;    text-align: center;
+    color: black;
+    text-align: center;
     margin: 0;
     padding: 0;
     font-size: $data;
@@ -131,14 +132,13 @@ main.main__container {
   span.state__box {
     border: none;
     @include neumorph_alt;
-    color: white;
+    color: $heading;
     font-size: $text;
     height: 2rem;
 
     &:focus {
       outline: none;
       font-size: $data;
-
     }
   }
 
@@ -159,9 +159,9 @@ main.main__container {
       flex-flow: column;
       justify-content: space-evenly;
     }
-    li{
+    li {
       font-size: $data;
-
+      color: darken($numbers,10%);
     }
   }
 }
@@ -182,7 +182,6 @@ main.main__container {
     color: $caution;
   }
   .attBtn {
-    // border: 1px solid white;
     display: inline-block;
     margin: auto;
 
@@ -225,6 +224,7 @@ main.main__container {
   width: 100%;
   height: 100%;
   max-height: 350px;
+  padding-bottom: 2rem;
 
   p {
     padding: 1.5rem 0.5rem 0;
@@ -255,6 +255,7 @@ main.main__container {
 }
 
 footer {
+
   text-align: center;
   width: 100%;
   margin: auto;
@@ -262,9 +263,10 @@ footer {
 
   p {
     font-size: $text;
+    color: $heading;
     a {
       text-decoration: none;
-      color: orange;
+      color: $numbers;
     }
   }
 }
@@ -276,7 +278,6 @@ footer {
   .select2-selection__arrow {
   margin-top: 2rem;
 }
-
 
 // Media queries
 
