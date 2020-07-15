@@ -16,10 +16,10 @@ const getUSData = (async () => {
   try {
     unitedStatesContainer.innerHTML = loadingText;
     const response = await axios.get(api);
-    // console.log(response)
-    // console.log(response.data)
+    console.log(response)
+    console.log(response.data)
     const { countrydata } = response.data;
-    // console.log(countrydata)
+    console.log(countrydata)
 
     countrydata.forEach((item) => {
       const {
