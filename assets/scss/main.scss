@@ -4,9 +4,9 @@
 $background: #2d3540;
 $caution: #ba6d01;
 $caution_alt: #f8db95;
-// $heading: #98B3D9;
-$heading: #e5e5e5;
-$numbers: #98b3d9;
+
+$numbers: #e5e5e5;
+$heading: #98b3d9;
 $title: 2.5rem;
 $data: 1.75rem;
 $info: 1.5rem;
@@ -161,7 +161,7 @@ main.main__container {
     }
     li {
       font-size: $data;
-      color: darken($numbers,10%);
+      color: darken($numbers, 10%);
     }
   }
 }
@@ -184,14 +184,12 @@ main.main__container {
   .attBtn {
     display: inline-block;
     margin: auto;
-
     width: 50px;
     height: 50px;
     /* Rotate div */
     -ms-transform: rotate(45deg); /* IE 9 */
     -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
     transform: rotate(45deg);
-
     @include neumorph_caution;
 
     .attImg {
@@ -201,22 +199,23 @@ main.main__container {
       // border: 1px solid green;
     }
   }
-
-  .container__items {
-    padding: 2.5rem 0.5rem;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-
-    width: 80%;
-    margin: auto;
-
+  ul {
+    list-style: initial;
     li {
-
       padding: 0.75rem 0;
       font-size: 0.75rem;
       color: $caution_alt;
+
+      text-align: left;
     }
+  }
+  .container__items {
+    padding: 2.5rem ;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+width: 90%;
+margin-left: 1rem;
   }
 }
 .symptoms__container {
@@ -259,7 +258,6 @@ main.main__container {
 }
 
 footer {
-
   text-align: center;
   width: 100%;
   margin: auto;
@@ -267,10 +265,10 @@ footer {
 
   p {
     font-size: $text;
-    color: $heading;
+    color: $numbers;
     a {
       text-decoration: none;
-      color: $numbers;
+      color: $heading;
     }
   }
 }
