@@ -51,6 +51,10 @@ $text: 1rem;
 }
 
 // overall
+html,body{
+  height: 100%;
+  width: 100%;
+}
 
 html {
   background: $background;
@@ -285,7 +289,9 @@ footer {
 
 @media (orientation: landscape) {
   .header__container {
-    height: auto;
+    h1{
+      color:green;
+    }
   }
   .header__container h1 {
     text-align: center;
