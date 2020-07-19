@@ -52,24 +52,26 @@ $text: 1rem;
 
 // overall
 html,body{
-  height: 100%;
-  width: 100%;
+  background: $background;
+  font-family: "Montserrat", sans-serif;
+
+
 }
 
 html {
-  background: $background;
-  font-family: "Montserrat", sans-serif;
 }
 body {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+
+
 }
 // main styling
 main.main__container {
-  margin: auto;
+height: 100%;
   max-width: 500px;
-  width: 95%;
-  text-align: center;
+  width: 90%;
 
   @include neumorph;
 }
@@ -290,7 +292,7 @@ footer {
 @media (orientation: landscape) {
   .header__container {
     h1{
-      color:green;
+      // color:green;
     }
   }
   .header__container h1 {
