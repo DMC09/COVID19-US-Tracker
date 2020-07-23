@@ -105,6 +105,9 @@ main.main__container {
       font-size: $data;
       color: $numbers;
       text-align: left;
+      span.num{
+        font-style: italic;
+      }
     }
   }
 }
@@ -173,6 +176,9 @@ main.main__container {
       font-size: $data;
       color: darken($numbers, 10%);
       text-align: left;
+      span.num{
+        font-style: italic;
+      }
     }
   }
 }
@@ -259,7 +265,6 @@ main.main__container {
     }
     li {
       padding: 1.5rem 0.5rem 0;
-
       color: $caution_alt;
     }
   }
@@ -314,6 +319,12 @@ margin:  0 0 0 2rem;
 
 
   }
+body > main > section.united__container > ul{
+  width: initial;
+}
+.state__container .state__api-list .states__api-data{
+  width: initial;
+}
 
 }
 
@@ -409,12 +420,4 @@ margin:  0 0 0 2rem;
   50% {
     opacity: 0.5;
   }
-}
-
-span.num{
-  font-style: italic;
-}
-
-span.data-type{
-// font-style: italic;
 }
