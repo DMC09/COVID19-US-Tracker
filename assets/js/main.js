@@ -16,10 +16,10 @@ const getUSData = (async () => {
   try {
     unitedStatesContainer.innerHTML = loadingText;
     const response = await axios.get(api);
-    console.log(response)
-    console.log(response.data)
+    console.log(response);
+    console.log(response.data);
     const { countrydata } = response.data;
-    console.log(countrydata)
+    console.log(countrydata);
 
     countrydata.forEach((item) => {
       const {
@@ -30,12 +30,10 @@ const getUSData = (async () => {
       } = item;
       unitedStatesContainer.innerHTML = `
       <ul class=united-data__api>
-      <li >${toFormat(total_cases)} Total Cases</li>
-      <li >${toFormat(total_recovered)}  Recovered</li>
-      <li >${toFormat(total_deaths)} Deaths </li>
-      <li >${toFormat(
-        total_new_cases_today
-      )} New Cases Today</li>
+      <li><span class="num">${toFormat(total_cases)}</span> <span class="data-type">Total Cases</span></li>
+      <li><span class="num">${toFormat(total_recovered)}</span>  Recovered</li>
+      <li><span class="num">${toFormat(total_deaths)}</span> Deaths </li>
+      <li><span class="num">${toFormat(total_new_cases_today)}</span> New Cases Today</li>
       </ul>
         `;
     });
@@ -58,13 +56,11 @@ $(document).ready(function () {
 
   const clickHandler = (e) => {
     // console.log(e);
-    dontContainer.scrollIntoView(true,{behavior:'smooth',block:"center"});
-
+    dontContainer.scrollIntoView(true, { behavior: "smooth", block: "center" });
   };
 
   const stateBox = document.querySelector(".state__box");
   const dontContainer = document.querySelector(".dont__container");
-
 
   //   $(".state__box").mousedown(function (e) {
   //     console.log(e);
@@ -93,10 +89,10 @@ const stateData = async (id, name) => {
     const { death, totalTestResults, positive, hospitalized } = stateStats;
     stateContainer.innerHTML = `
 <ul class = "states__api-data">
-<li >${toFormat(totalTestResults)} Total tested</li>
-<li >${toFormat(positive)} positive cases</li>
-<li >${toFormat(hospitalized)} hospitalized</li>
-<li >${toFormat(death)} Deaths </li>
+<li ><span class="num">${toFormat(totalTestResults)}</span> Total Tested</li>
+<li ><span class="num">${toFormat(positive)}</span> positive Cases</li>
+<li ><span class="num">${toFormat(hospitalized)}</span> Hospitalized</li>
+<li ><span class="num">${toFormat(death)}</span> Deaths </li>
 </ul>
 `;
   } catch (error) {

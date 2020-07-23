@@ -92,19 +92,19 @@ main.main__container {
 .united__container {
   width: 100%;
   height: 40vh;
-  margin: auto;
-  list-style: none;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 
   ul {
-    height: 100%;
     display: flex;
     justify-content: space-evenly;
     flex-flow: column;
+    width: 70%;
 
     li {
       font-size: $data;
       color: $numbers;
+      text-align: left;
     }
   }
 }
@@ -113,6 +113,10 @@ main.main__container {
   width: 100%;
   margin: auto;
   text-align: center;
+  list-style: none;
+
+
+
   .select2-container--default
     .select2-selection--single
     .select2-selection__placeholder,
@@ -155,9 +159,12 @@ main.main__container {
 
   .state__api-list {
     height: 15rem;
+    display: flex;
+    justify-content: center;
 
     .states__api-data {
       height: 100%;
+      width: 75%;
       display: flex;
       flex-flow: column;
       justify-content: space-evenly;
@@ -165,6 +172,7 @@ main.main__container {
     li {
       font-size: $data;
       color: darken($numbers, 10%);
+      text-align: left;
     }
   }
 }
@@ -401,4 +409,12 @@ margin:  0 0 0 2rem;
   50% {
     opacity: 0.5;
   }
+}
+
+span.num{
+  font-style: italic;
+}
+
+span.data-type{
+// font-style: italic;
 }
