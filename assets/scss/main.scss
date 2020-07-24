@@ -11,29 +11,7 @@ $title: 2.5rem;
 $data: 1.5rem;
 $info: 1.25rem;
 $text: 1rem;
-@mixin horizntal-list {
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#2d3540+0,707c8c+50,2d3540+100 */
-  background: #2d3540; /* Old browsers */
-  background: -moz-linear-gradient(
-    -45deg,
-    #2d3540 0%,
-    #707c8c 50%,
-    #2d3540 100%
-  ); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    -45deg,
-    #2d3540 0%,
-    #707c8c 50%,
-    #2d3540 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    135deg,
-    #2d3540 0%,
-    #707c8c 50%,
-    #2d3540 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d3540', endColorstr='#2d3540',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-}
+
 @mixin neumorph {
   border-radius: 10px;
   background: #2d3540;
@@ -95,21 +73,19 @@ main.main__container {
   display: flex;
   justify-content: center;
 
-  ul {
-    display: flex;
-    justify-content: space-evenly;
-    flex-flow: column;
-    width: 70%;
 
-    li {
-      font-size: $data;
-      color: $numbers;
-      text-align: left;
-      span.num{
-        font-style: italic;
-      }
-    }
-  }
+  // .US_nums {
+  //   width: 40%;
+  //   ul{
+  //     display: flex;
+  //     flex-flow: column;
+  //     justify-content: space-evenly;
+  //   }
+  // }
+  //
+  // .US_names {
+  //   width: 60%;
+  // }
 }
 
 .state__container {
@@ -117,8 +93,6 @@ main.main__container {
   margin: auto;
   text-align: center;
   list-style: none;
-
-
 
   .select2-container--default
     .select2-selection--single
@@ -176,7 +150,7 @@ main.main__container {
       font-size: $data;
       color: darken($numbers, 10%);
       text-align: left;
-      span.num{
+      span.num {
         font-style: italic;
       }
     }
@@ -210,7 +184,6 @@ main.main__container {
       -ms-transform: rotate(-45deg); /* IE 9 */
       -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
       transform: rotate(-45deg);
-
     }
   }
 
@@ -313,27 +286,22 @@ footer {
   .header__container {
     height: auto;
   }
-.caution__container .container__items{
-width: 90%;
-margin:  0 0 0 2rem;
-
-
+  .caution__container .container__items {
+    width: 90%;
+    margin: 0 0 0 2rem;
   }
-body > main > section.united__container > ul{
-  width: initial;
-}
-.state__container .state__api-list .states__api-data{
-  width: initial;
-}
-
+  body > main > section.united__container > ul {
+    width: initial;
+  }
+  .state__container .state__api-list .states__api-data {
+    width: initial;
+  }
 }
 
 @media (min-width: 576px) {
   .header__container {
     height: auto;
   }
-
-
 }
 
 // Medium devices
