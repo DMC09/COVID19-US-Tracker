@@ -90,7 +90,7 @@ const stateData = async (id, name) => {
     stateContainer.innerHTML = `
 <ul class = "states__api-data">
 <li ><span class="num">${toFormat(totalTestResults)}</span> Total Tested</li>
-<li ><span class="num">${toFormat(positive)}</span> positive Cases</li>
+<li ><span class="num">${toFormat(positive)}</span> Positive Cases</li>
 <li ><span class="num">${toFormat(hospitalized)}</span> Hospitalized</li>
 <li ><span class="num">${toFormat(death)}</span> Deaths </li>
 </ul>
