@@ -1,7 +1,9 @@
 "use strict";
 const unitedStatesContainer = document.querySelector(".united__container");
 const stateContainer = document.querySelector(".state__api-list"); //get another container so the select element does not disapear
-
+const usNums = document.querySelector(".US_nums")
+const usNames = document.querySelector(".US_names")
+console.log(usNums,usNames)
 const toFormat = (number) =>
   number == null
     ? 0
