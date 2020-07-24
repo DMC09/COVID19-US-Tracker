@@ -74,18 +74,27 @@ main.main__container {
   justify-content: center;
 
 
-  // .US_nums {
-  //   width: 40%;
-  //   ul{
-  //     display: flex;
-  //     flex-flow: column;
-  //     justify-content: space-evenly;
-  //   }
-  // }
-  //
-  // .US_names {
-  //   width: 60%;
-  // }
+  .US_nums {
+    width: 40%;
+ul{
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  text-align: right;
+}
+  }
+
+  .US_names {
+    width: 60%;
+  }
+  ul{
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    text-align: left;
+  }
 }
 
 .state__container {
