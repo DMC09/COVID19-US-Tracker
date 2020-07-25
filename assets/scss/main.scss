@@ -185,12 +185,8 @@ ul{
       justify-content: space-evenly;
     }
     li {
-      font-size: $data;
-      color: darken($numbers, 10%);
-      text-align: left;
-      span.num {
-        font-style: italic;
-      }
+      // font-size: $data;
+      // color: darken($numbers, 10%);
     }
   }
 }
@@ -426,4 +422,12 @@ footer {
   50% {
     opacity: 0.5;
   }
+}
+
+// .select2-search--dropdown,
+.select2-container--open .select2-dropdown--below{
+  background: lighten($background,10%);
+  color: white;
+  text-align: center;
+  border: none;
 }

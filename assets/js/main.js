@@ -3,8 +3,8 @@ const unitedStatesContainer = document.querySelector(".united__container");
 const stateContainer = document.querySelector(".state__api-list"); //get another container so the select element does not disapear
 const usNums = document.querySelector(".US_nums")
 const usNames = document.querySelector(".US_names")
-const stateNums = document.querySelector(".US_nums")
-const stateNames = document.querySelector(".US_names")
+const stateNums = document.querySelector(".State_nums")
+const stateNames = document.querySelector(".State_names")
 
 const toFormat = (number) =>
   number == null
@@ -64,7 +64,6 @@ $(document).ready(function () {
     debug: true,
     containerCssClass: "state__box",
     dropdownCssClass: "state__dropdown",
-    dropdownParent: $(".state__api-list"),
     width: "75%",
   });
 
@@ -76,15 +75,6 @@ $(document).ready(function () {
   const stateBox = document.querySelector(".state__box");
   const dontContainer = document.querySelector(".dont__container");
 
-  //   $(".state__box").mousedown(function (e) {
-  //     console.log(e);
-  //     dontContainer.scrollIntoView();
-  //     window.scrollBy({
-  //     "behavior": "smooth",
-  //     "top": 500
-  // });
-  //
-  //   });
 
   $("#select").on("select2:select", function getSelect(e) {
     const name = e.params.data.text;
@@ -101,14 +91,23 @@ const stateData = async (id, name) => {
     const response = await axios.get(api);
     const { ...stateStats } = response.data;
     const { death, totalTestResults, positive, hospitalized } = stateStats;
-    stateContainer.innerHTML = `
-<ul class = "states__api-data">
-<li ><span class="num">${toFormat(totalTestResults)}</span> Total Tested</li>
-<li ><span class="num">${toFormat(positive)}</span> Positive Cases</li>
-<li ><span class="num">${toFormat(hospitalized)}</span> Hospitalized</li>
-<li ><span class="num">${toFormat(death)}</span> Deaths </li>
+    stateNums.innerHTML = `
+<ul >
+<li ><span class="num">${toFormat(totalTestResults)}</span></li>
+<li ><span class="num">${toFormat(positive)}</span></li>
+<li ><span class="num">${toFormat(hospitalized)}</span> </li>
+<li ><span class="num">${toFormat(death)}</span>  </li>
 </ul>
 `;
+stateNames.innerHTML=`
+<ul>
+<li>Total Tested</li>
+<li>Positive</li>
+<li>Hospitalized</li>
+<li>Deaths</li>
+</ul>
+`;
+
   } catch (error) {
     console.error(error);
   }
