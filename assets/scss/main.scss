@@ -72,8 +72,11 @@ main.main__container {
   height: 40vh;
   display: flex;
   justify-content: center;
+margin: 2rem 0 0;
+
  li{
    font-size: $data;
+   color: $numbers;
  }
 
   .US_nums {
@@ -153,8 +156,11 @@ ul{
     height: 15rem;
     display: flex;
     justify-content: center;
+    margin: 2rem 0 0;
+
     li{
       font-size: $data;
+      color: $numbers
     }
 
 
@@ -431,7 +437,7 @@ footer {
 }
 
 // .select2-search--dropdown,
-.select2-container--open .select2-dropdown--below{
+.select2-container--open .select2-dropdown--below,.select2-container--open .select2-dropdown--above{
   background: lighten($background,10%);
   color: white;
   text-align: center;
@@ -440,5 +446,6 @@ footer {
 
 span.num{
 
+font-style: italic;
 
 }
