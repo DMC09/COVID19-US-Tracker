@@ -85,7 +85,7 @@ ul{
   height: 100%;
   display: flex;
   flex-flow: column;
-  justify-content: -around;
+  justify-content: space-around;
   text-align: right;
   margin-right: 1rem;
 
@@ -99,7 +99,7 @@ ul{
     height: 100%;
     display: flex;
     flex-flow: column;
-    justify-content: -around;
+    justify-content: space-around;
     text-align: left;
 
 
@@ -170,7 +170,7 @@ ul{
       height: 100%;
       display: flex;
       flex-flow: column;
-      justify-content: -around;
+      justify-content: space-around;
       text-align: right;
       margin-right: 1rem;
 
@@ -184,7 +184,7 @@ ul{
         height: 100%;
         display: flex;
         flex-flow: column;
-        justify-content: -around;
+        justify-content: space-around;
         text-align: left;
 
       }
@@ -194,7 +194,7 @@ ul{
       width: 75%;
       display: flex;
       flex-flow: column;
-      justify-content: -evenly;
+      justify-content: space-evenly;
     }
     li {
       // font-size: $data;
@@ -206,7 +206,7 @@ ul{
 .caution__container {
   display: flex;
   flex-flow: column;
-  justify-content: -around;
+  justify-content: space-around;
   text-align: center;
 
   h2 {
@@ -254,7 +254,7 @@ ul{
 .symptoms__container {
   display: flex;
   flex-flow: column;
-  justify-content: -around;
+  justify-content: space-around;
   text-align: center;
   margin: auto;
   width: 100%;
