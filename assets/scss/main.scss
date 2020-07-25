@@ -80,7 +80,7 @@ ul{
   height: 100%;
   display: flex;
   flex-flow: column;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: right;
   margin-right: 1rem;
 
@@ -94,7 +94,7 @@ ul{
     height: 100%;
     display: flex;
     flex-flow: column;
-    justify-content: space-around;
+    justify-content: space-between;
     text-align: left;
 
   }
@@ -150,6 +150,32 @@ ul{
     height: 15rem;
     display: flex;
     justify-content: center;
+
+
+      .State_nums {
+        width: 40%;
+    ul{
+      height: 100%;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      text-align: right;
+      margin-right: 1rem;
+
+    }
+      }
+
+      .State_names {
+        width: 60%;
+      }
+      ul{
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        text-align: left;
+
+      }
 
     .states__api-data {
       height: 100%;
