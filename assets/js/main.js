@@ -46,7 +46,7 @@ const getUSData = (async () => {
         <li>Total Cases</li>
         <li>Recoveries</li>
         <li>Deaths</li>
-        <li>New Cases Today</li>
+        <li>Cases Today</li>
         </ul>
 
         `;
@@ -95,16 +95,16 @@ const stateData = async (id, name) => {
 <ul >
 <li ><span class="num">${toFormat(totalTestResults)}</span></li>
 <li ><span class="num">${toFormat(positive)}</span></li>
-<li ><span class="num">${toFormat(hospitalized)}</span> </li>
 <li ><span class="num">${toFormat(death)}</span>  </li>
+<li ><span class="num">${toFormat(hospitalized)}</span> </li>
 </ul>
 `;
 stateNames.innerHTML=`
 <ul>
 <li>Total Tested</li>
 <li>Positive</li>
-<li>Hospitalized</li>
 <li>Deaths</li>
+<li>Hospitalized</li>
 </ul>
 `;
 

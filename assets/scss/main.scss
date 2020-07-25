@@ -80,12 +80,12 @@ margin: 2rem 0 0;
  }
 
   .US_nums {
-    width: 40%;
+    width: 50%;
 ul{
   height: 100%;
   display: flex;
   flex-flow: column;
-  justify-content: space-between;
+  justify-content: -around;
   text-align: right;
   margin-right: 1rem;
 
@@ -93,13 +93,13 @@ ul{
   }
 
   .US_names {
-    width: 60%;
+    width: 50%;
   }
   ul{
     height: 100%;
     display: flex;
     flex-flow: column;
-    justify-content: space-between;
+    justify-content: -around;
     text-align: left;
 
 
@@ -165,12 +165,12 @@ ul{
 
 
       .State_nums {
-        width: 40%;
+        width: 50%;
     ul{
       height: 100%;
       display: flex;
       flex-flow: column;
-      justify-content: space-between;
+      justify-content: -around;
       text-align: right;
       margin-right: 1rem;
 
@@ -178,13 +178,13 @@ ul{
       }
 
       .State_names {
-        width: 60%;
+        width: 50%;
       }
       ul{
         height: 100%;
         display: flex;
         flex-flow: column;
-        justify-content: space-between;
+        justify-content: -around;
         text-align: left;
 
       }
@@ -194,7 +194,7 @@ ul{
       width: 75%;
       display: flex;
       flex-flow: column;
-      justify-content: space-evenly;
+      justify-content: -evenly;
     }
     li {
       // font-size: $data;
@@ -206,7 +206,7 @@ ul{
 .caution__container {
   display: flex;
   flex-flow: column;
-  justify-content: space-around;
+  justify-content: -around;
   text-align: center;
 
   h2 {
@@ -254,7 +254,7 @@ ul{
 .symptoms__container {
   display: flex;
   flex-flow: column;
-  justify-content: space-around;
+  justify-content: -around;
   text-align: center;
   margin: auto;
   width: 100%;
