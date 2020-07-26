@@ -4,7 +4,6 @@
 $background: #2d3540;
 $caution: #ba6d01;
 $caution_alt: #f8db95;
-
 $numbers: #e5e5e5;
 $heading: #98b3d9;
 $title: 2.5rem;
@@ -332,22 +331,14 @@ footer {
   .header__container {
     height: auto;
   }
-  .caution__container .container__items {
-    width: 90%;
-    margin: 0 0 0 2rem;
-  }
-  body > main > section.united__container > ul {
-    width: initial;
-  }
-  .state__container .state__api-list .states__api-data {
-    width: initial;
-  }
+
 }
 
 @media (min-width: 576px) {
   .header__container {
     height: auto;
   }
+
 }
 
 // Medium devices
@@ -366,12 +357,11 @@ footer {
 }
 
 .lds-grid {
-  display: inline-block;
   position: relative;
-
-  width: 100px;
-  height: 100px;
-  margin-top: 4rem;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: 8rem;
 }
 .lds-grid div {
   position: absolute;
@@ -448,4 +438,10 @@ span.num{
 
 font-style: italic;
 
+}
+
+.error-text{
+  color:red;
+  font-size: 1.25rem;
+margin: auto;
 }

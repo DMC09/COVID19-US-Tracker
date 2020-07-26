@@ -14,7 +14,7 @@ const toFormat = (number) =>
 // Gets United State Data on load
 const getUSData = (async () => {
   const loadingText =
-    '<div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
+    '<div style="margin:0 auto;"class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
   const errorText = `<h3 class="error-text"> API data unable to load please try again later</h3>`;
   const api = "https://api.thevirustracker.com/free-api?countryTotal=US";
   try {
