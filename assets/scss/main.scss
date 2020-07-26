@@ -245,9 +245,9 @@ ul{
   .container__items {
     padding-top: 2rem;
     display: flex;
-    width: 75%;
+
     flex-wrap: wrap;
-    margin: auto;
+    margin-left: 5rem ;
   }
 }
 .symptoms__container {
@@ -323,6 +323,7 @@ footer {
   .header__container h1 {
     text-align: center;
   }
+
 }
 
 // Small devices
@@ -331,7 +332,9 @@ footer {
   .header__container {
     height: auto;
   }
-
+  .caution__container .container__items{
+    margin-left: 2rem;
+  }
 }
 
 @media (min-width: 576px) {
