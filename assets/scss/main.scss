@@ -1,40 +1,13 @@
 // imports
 @import "reset.css";
-// vars
-$background: #2d3540;
-$caution: #ba6d01;
-$caution_alt: #f8db95;
-$numbers: #e5e5e5;
-$heading: #98b3d9;
-$title: 2.5rem;
-$data: 1.5rem;
-$info: 1.25rem;
-$text: 1rem;
-
-@mixin neumorph {
-  border-radius: 10px;
-  background: #2d3540;
-  box-shadow: 5px 5px 10px #262d36, -5px -5px 10px #343d4a;
-}
-@mixin neumorph_alt {
-  border-radius: 10px;
-  background: #2d3540;
-  box-shadow: -5px -5px 10px #262d36 inset, 5px 5px 10px #343d4a inset;
-}
-@mixin neumorph_caution {
-  border-radius: 10px;
-  background: #ba6d01;
-  box-shadow: inset 5px -5px 3px #9e5d01, inset -5px 5px 3px #d67d01;
-}
+@import "./vars.scss";
+@import "./mixins.scss";
 
 // overall
 html,
 body {
   background: $background;
   font-family: "Montserrat", sans-serif;
-}
-
-html {
 }
 body {
   margin: 1.5rem 0;
@@ -46,7 +19,6 @@ main.main__container {
   height: 100%;
   max-width: 500px;
   width: 90%;
-
   @include neumorph;
 }
 
@@ -341,12 +313,22 @@ footer {
   .header__container {
     height: auto;
   }
+  .lds-grid{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+  }
 
 }
 
 // Medium devices
 
 @media (min-width: 768px) {
+  .lds-grid{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+  }
 }
 
 // Large devices
@@ -360,11 +342,9 @@ footer {
 }
 
 .lds-grid {
-  position: relative;
-    width: 100px;
-    height: 100px;
-    position: relative;
-    left: 8rem;
+position: absolute;
+top: 50%;
+left: 46%;
 }
 .lds-grid div {
   position: absolute;

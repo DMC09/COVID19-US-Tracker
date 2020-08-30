@@ -14,16 +14,20 @@ const toFormat = (number) =>
 // Gets United State Data on load
 const getUSData = (async () => {
   const loadingText =
-    '<div style="margin:0 auto;"class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
+    '<div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
   const errorText = `<h3 class="error-text"> API data unable to load please try again later</h3>`;
   const api = "https://api.thevirustracker.com/free-api?countryTotal=US";
+  const api2 = "https://api.covidtracking.com/v1/us/current.json";
+  console.log(api2)
   try {
+    const response2 = await axios.get(api2);
+    // to get the united states
+    const data = response2.data[0]
+    console.log(data);
     usNums.innerHTML = loadingText;
     const response = await axios.get(api);
-    console.log(response);
-    console.log(response.data);
     const { countrydata } = response.data;
-    console.log(countrydata);
+    // console.log(countrydata);
 
     countrydata.forEach((item) => {
       const {
@@ -34,19 +38,19 @@ const getUSData = (async () => {
       } = item;
       usNums.innerHTML = `
       <ul class=united-data__api>
-      <li><span class="num">${toFormat(total_cases)}</span></li>
-      <li><span class="num">${toFormat(total_recovered)}</span></li>
-      <li><span class="num">${toFormat(total_deaths)}</span></li>
-      <li><span class="num">${toFormat(total_new_cases_today)}</span></li>
+      <!-- <li>${toFormat(total_cases)}</li> -->
+      <!-- <li>${toFormat(total_recovered)}</li> -->
+      <!-- <li>${toFormat(total_deaths)}</li> -->
+      <!-- <li>${toFormat(total_new_cases_today)}</li> -->
       </ul>
         `;
         usNames.innerHTML =
         `
         <ul>
-        <li>Total Cases</li>
-        <li>Recoveries</li>
-        <li>Deaths</li>
-        <li>Cases Today</li>
+        <li><span class="num">Total Cases</span></li>
+        <li><span class="num">Recoveries</span></li>
+        <li><span class="num">Deaths</span></li>
+        <li><span class="num">Cases Today</span></li>
         </ul>
 
         `;
@@ -93,18 +97,18 @@ const stateData = async (id, name) => {
     const { death, totalTestResults, positive, hospitalized } = stateStats;
     stateNums.innerHTML = `
 <ul >
-<li ><span class="num">${toFormat(totalTestResults)}</span></li>
-<li ><span class="num">${toFormat(positive)}</span></li>
-<li ><span class="num">${toFormat(death)}</span>  </li>
-<li ><span class="num">${toFormat(hospitalized)}</span> </li>
+<li >${toFormat(totalTestResults)}</li>
+<li >${toFormat(positive)}</li>
+<li >${toFormat(death)}  </li>
+<li >${toFormat(hospitalized)} </li>
 </ul>
 `;
 stateNames.innerHTML=`
 <ul>
-<li>Total Tested</li>
-<li>Positive</li>
-<li>Deaths</li>
-<li>Hospitalized</li>
+<li><span class="num">Total Tested</span></li>
+<li><span class="num">Positive</span></li>
+<li><span class="num">Deaths</span></li>
+<li><span class="num">Hospitalized</span></li>
 </ul>
 `;
 
