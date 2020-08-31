@@ -22,26 +22,24 @@ const getUSData = (async () => {
   try {
     const response2 = await axios.get(api2);
     // to get the united states
-    const data = response2.data[0]
+    const data = response2.data
     console.log(data);
     usNums.innerHTML = loadingText;
     const response = await axios.get(api);
     const { countrydata } = response.data;
-    // console.log(countrydata);
-
-    countrydata.forEach((item) => {
-      const {
-        total_cases,
-        total_recovered,
-        total_deaths,
-        total_new_cases_today,
-      } = item;
+    console.log(countrydata[0]);
+    const {
+      positive,
+      recovered,
+      death,
+      positiveIncrease,
+    } = data[0];
       usNums.innerHTML = `
       <ul class=united-data__api>
-      <!-- <li>${toFormat(total_cases)}</li> -->
-      <!-- <li>${toFormat(total_recovered)}</li> -->
-      <!-- <li>${toFormat(total_deaths)}</li> -->
-      <!-- <li>${toFormat(total_new_cases_today)}</li> -->
+      <li>${toFormat(positive)}</li>
+      <li>${toFormat(recovered)}</li>
+      <li>${toFormat(death)}</li>
+      <li>${toFormat(positiveIncrease)}</li>
       </ul>
         `;
         usNames.innerHTML =
@@ -52,9 +50,8 @@ const getUSData = (async () => {
         <li><span class="num">Deaths</span></li>
         <li><span class="num">Cases Today</span></li>
         </ul>
-
         `;
-    });
+
   } catch (error) {
     console.error(error);
     unitedStatesContainer.innerHTML = errorText;
