@@ -16,24 +16,17 @@ const getUSData = (async () => {
   const loadingText =
     '<div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
   const errorText = `<h3 class="error-text"> API data unable to load please try again later</h3>`;
-  const api = "https://api.thevirustracker.com/free-api?countryTotal=US";
-  const api2 = "https://api.covidtracking.com/v1/us/current.json";
-  console.log(api2)
+  const api = "https://api.covidtracking.com/v1/us/current.json";
   try {
-    const response2 = await axios.get(api2);
-    // to get the united states
-    const data = response2.data
-    console.log(data);
-    usNums.innerHTML = loadingText;
     const response = await axios.get(api);
-    const { countrydata } = response.data;
-    console.log(countrydata[0]);
+    const data = await response.data
+    usNums.innerHTML = loadingText;
     const {
       positive,
       recovered,
       death,
       positiveIncrease,
-    } = data[0];
+    } = await data[0];
       usNums.innerHTML = `
       <ul class=united-data__api>
       <li>${toFormat(positive)}</li>
@@ -42,8 +35,7 @@ const getUSData = (async () => {
       <li>${toFormat(positiveIncrease)}</li>
       </ul>
         `;
-        usNames.innerHTML =
-        `
+      usNames.innerHTML =`
         <ul>
         <li><span class="num">Total Cases</span></li>
         <li><span class="num">Recoveries</span></li>
@@ -68,10 +60,7 @@ $(document).ready(function () {
     width: "75%",
   });
 
-  const clickHandler = (e) => {
-    // console.log(e);
-    dontContainer.scrollIntoView(true, { behavior: "smooth", block: "center" });
-  };
+
 
   const stateBox = document.querySelector(".state__box");
   const dontContainer = document.querySelector(".dont__container");
@@ -86,26 +75,27 @@ $(document).ready(function () {
 
 // function to retreive ID from dropdown and match with state data
 const stateData = async (id, name) => {
-  const api = `https://covidtracking.com/api/states?state=${id.toLowerCase()}`;
+  const api = `https://api.covidtracking.com/v1/states/${id.toLowerCase()}/current.json`;
+
   try {
-    console.log(id);
+
     const response = await axios.get(api);
-    const { ...stateStats } = response.data;
-    const { death, totalTestResults, positive, hospitalized } = stateStats;
+    const { ...stateStats } = await response.data;
+    const { positive, recovered, death, positiveIncrease } = await stateStats;
     stateNums.innerHTML = `
 <ul >
-<li >${toFormat(totalTestResults)}</li>
 <li >${toFormat(positive)}</li>
+<li >${toFormat(recovered)}</li>
 <li >${toFormat(death)}  </li>
-<li >${toFormat(hospitalized)} </li>
+<li >${toFormat(positiveIncrease)} </li>
 </ul>
 `;
 stateNames.innerHTML=`
 <ul>
-<li><span class="num">Total Tested</span></li>
-<li><span class="num">Positive</span></li>
+<li><span class="num">Total Cases</span></li>
+<li><span class="num">Recoveries</span></li>
 <li><span class="num">Deaths</span></li>
-<li><span class="num">Hospitalized</span></li>
+<li><span class="num">Cases Today</span></li>
 </ul>
 `;
 
