@@ -1,5 +1,17 @@
-# COVID19-US-Tracker
-Web app that pulls API Data from [TheVirustracker](https://thevirustracker.com) and [Covidtracking.com](https://covidtracking.com)
+## COVID-19-US-Tracker
+A web app used to retrive COVID-19 information for the United States and any of the 50 states. 
 
-[Live](https://covid-19-us-tracker.netlify.com)
-![Homepage](./Homepage.png)
+
+## Screenshots
+Include logo/demo screenshot etc.
+
+## Tech/framework used
+
+<b>Built with</b>
+- HTML,CSS,Javascript
+
+
+## License
+A short snippet describing the license (MIT, Apache etc)
+
+MIT © [Yourname]()
