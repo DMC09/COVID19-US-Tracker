@@ -23,14 +23,14 @@ const getUSData = (async () => {
     usNums.innerHTML = loadingText;
     const {
       positive,
-      recovered,
+      hospitalized,
       death,
       positiveIncrease,
     } = await data[0];
       usNums.innerHTML = `
       <ul class=united-data__api>
       <li>${toFormat(positive)}</li>
-      <li>${toFormat(recovered)}</li>
+      <li>${toFormat(hospitalized)}</li>
       <li>${toFormat(death)}</li>
       <li>${toFormat(positiveIncrease)}</li>
       </ul>
@@ -38,7 +38,7 @@ const getUSData = (async () => {
       usNames.innerHTML =`
         <ul>
         <li><span class="num">Total Cases</span></li>
-        <li><span class="num">Recoveries</span></li>
+        <li><span class="num">Hospitalized</span></li>
         <li><span class="num">Deaths</span></li>
         <li><span class="num">Cases Today</span></li>
         </ul>
