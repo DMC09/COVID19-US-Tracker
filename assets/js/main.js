@@ -16,31 +16,45 @@ const getUSData = (async () => {
   const loadingText =
     '<div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
   const errorText = `<h3 class="error-text"> API data unable to load please try again later</h3>`;
-  const api = "https://api.covidtracking.com/v1/us/current.json";
+  // const api = "https://api.covidtracking.com/v1/us/current.json";
+  const api = "https://disease.sh/v3/covid-19/countries/USA?yesterday=true&twoDaysAgo=false&strict=false&allowNull=true";
   try {
     const response = await axios.get(api);
     const data = await response.data
+    console.log(data);
     usNums.innerHTML = loadingText;
     const {
-      positive,
-      hospitalized,
-      death,
-      positiveIncrease,
-    } = await data[0];
+      cases,
+      active,
+      critical,
+      todayCases,
+      deaths,
+      recovered,
+    } = await data;
+    console.log(cases,
+    active,
+    critical,
+    todayCases,
+    deaths,
+    recovered);
       usNums.innerHTML = `
-      <ul class=united-data__api>
-      <li>${toFormat(positive)}</li>
-      <li>${toFormat(hospitalized)}</li>
-      <li>${toFormat(death)}</li>
-      <li>${toFormat(positiveIncrease)}</li>
+       <ul class=united-data__api>
+      <li>${toFormat(cases)}</li>
+      <li>${toFormat(recovered)}</li>
+      <li>${toFormat(active)}</li>
+      <li>${toFormat(critical)}</li>
+      <li>${toFormat(todayCases)}</li>
+      <li>${toFormat(deaths)}</li>
       </ul>
         `;
       usNames.innerHTML =`
         <ul>
         <li><span class="num">Total Cases</span></li>
-        <li><span class="num">Hospitalized</span></li>
+        <li><span class="num">Recovered</span></li>
+        <li><span class="num">Active Cases</span></li>
+        <li><span class="num">Critical Cases</span></li>
+        <li><span class="num">Todays Cases</span></li>
         <li><span class="num">Deaths</span></li>
-        <li><span class="num">Cases Today</span></li>
         </ul>
         `;
 
