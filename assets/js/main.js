@@ -81,35 +81,40 @@ $(document).ready(function () {
 
 
   $("#select").on("select2:select", function getSelect(e) {
-    const name = e.params.data.text;
     const id = e.params.data.id;
     stateData(id, name);
   });
 });
 
 // function to retreive ID from dropdown and match with state data
-const stateData = async (id, name) => {
-  const api = `https://api.covidtracking.com/v1/states/${id.toLowerCase()}/current.json`;
+const stateData = async (id) => {
+  console.log(id,'this is the id!');
+  // const api = `https://api.covidtracking.com/v1/states/${id.toLowerCase()}/current.json`;
+  const api = `https://disease.sh/v3/covid-19/states/${id}?yesterday=true&allowNull=1`;
 
   try {
 
     const response = await axios.get(api);
-    const { ...stateStats } = await response.data;
-    const { positive, recovered, death, positiveIncrease } = await stateStats;
+    console.log(response);
+    console.log(response.data);
+    const { cases,active,deaths,recovered,todayCases } = await response.data;
+console.log(cases,recovered,active,todayCases,deaths);
     stateNums.innerHTML = `
 <ul >
-<li >${toFormat(positive)}</li>
+<li >${toFormat(cases)}</li>
 <li >${toFormat(recovered)}</li>
-<li >${toFormat(death)}  </li>
-<li >${toFormat(positiveIncrease)} </li>
+<li >${toFormat(active)}  </li>
+<li >${toFormat(todayCases)} </li>
+<li >${toFormat(deaths)} </li>
 </ul>
 `;
 stateNames.innerHTML=`
 <ul>
 <li><span class="num">Total Cases</span></li>
-<li><span class="num">Recoveries</span></li>
+<li><span class="num">Recovered</span></li>
+<li><span class="num">Active Cases</span></li>
+<li><span class="num">Todays Cases</span></li>
 <li><span class="num">Deaths</span></li>
-<li><span class="num">Cases Today</span></li>
 </ul>
 `;
 
