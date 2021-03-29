@@ -10,5 +10,4 @@ A web app used to retrieve COVID-19 information for the United States.
 
 
 ## Screenshots
-<img src="https://github.com/DMC09/COVID19-US-Tracker/blob/master/assets/img/Screenshot_1.png" alt="Main US Stats" width="600"/>
-<img src="https://github.com/DMC09/COVID19-US-Tracker/blob/master/assets/img/Screenshot_2.png" alt="Main US Stats" width="600"/>
+<img src="https://raw.githubusercontent.com/DMC09/Image-storage/main/covidTrackerSnap.png" alt="placeholder" width="600"/>
